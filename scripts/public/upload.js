@@ -26,8 +26,13 @@ btn.addEventListener("click", e=>{
         document.getElementById("count").className = "demo";
     }, 4000);
 
+    setTimeout(()=>{
+      myVideoStream.remove();
+    },6900);
+
     const timeout5 = setTimeout(()=>{
         location.replace("taking_pic.html")
+        
     }, 7000);
 })
 
@@ -54,17 +59,17 @@ function getVideo(){
   });
 }
 
-if (!navigator.mediaDevices?.enumerateDevices) {
-    console.log("enumerateDevices() not supported.");
-  } else {
-    // List cameras and microphones.
-    navigator.mediaDevices.enumerateDevices()
-      .then((devices) => {
-        devices.forEach((device) => {
-          console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
-        });
-      })
-      .catch((err) => {
-        console.error(`${err.name}: ${err.message}`);
-      });
-  }
+// if (!navigator.mediaDevices?.enumerateDevices) {
+//     console.log("enumerateDevices() not supported.");
+//   } else {
+//     // List cameras and microphones.
+//     navigator.mediaDevices.enumerateDevices()
+//       .then((devices) => {
+//         devices.forEach((device) => {
+//           console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
+//         });
+//       })
+//       .catch((err) => {
+//         console.error(`${err.name}: ${err.message}`);
+//       });
+//   }
