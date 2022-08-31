@@ -27,6 +27,7 @@ const rosnodejs = require('rosnodejs');
 const express = require('express');
 const app = express();
 const path = require('path');
+const fs = require('fs')
 const port = 5000;
 // Requrotires the std_msgs message package
 const std_msgs = rosnodejs.require('std_msgs').msg;
@@ -126,7 +127,7 @@ if (require.main === module) {
 
   app.get('/taking_pic.html', (req,res) =>{
     res.sendFile(__dirname+'/taking_pic.html');
-    // opnecv_capture();
+    opnecv_capture();
     //사진 저장 후 경로 public/img/uploads  파일명 : model.jpg 
   })
 
@@ -144,7 +145,7 @@ if (require.main === module) {
     
 
     const { exec } = require("child_process")
-    exec(`roscd hongdo_ros_web && cd scripts/public/img/uploads && python3 vision.py`,async(err, stdout, stderr) => {
+    exec(`cd /home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads && python3 vision.py`,async(err, stdout, stderr) => {
       if(err) console.error(err)
       console.log(stdout)
     })
@@ -154,10 +155,13 @@ if (require.main === module) {
 
 
   app.get('/drawn.html', (req,res) =>{
-    const { exec } = require("child_process")
-    exec(`roscd hongdo_ros_web && cd scripts/public/img/uploads && python3 vision.py`,async(err, stdout, stderr) => {
-      if(err) console.error(err)
-      console.log(stdout)
+    let readFile = fs.readFileSync(__dirname+'public/img/uploads/hi.png');
+    let encode = Buffer.from(readFile).toString('base64');
+    const { exec } = require("child_process");
+    exec(`curl --location --request POST "https://api.imgbb.com/1/upload?expiration=600&key=e4422a3845100fe670775736ffd0e7cb" --form "image=${encode}"`, async (err, stdout, stderr) => {
+        if (err) console.error(err)
+        const arr = stdout.split('"');
+        console.log(arr[17]);
     })
     res.sendFile(__dirname+'/drawn.html');
   })
