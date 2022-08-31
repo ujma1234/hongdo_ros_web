@@ -29,8 +29,12 @@ const app = express();
 const path = require('path');
 const fs = require('fs')
 const port = 5000;
+const {exec} = require("child_process");
 // Requrotires the std_msgs message package
-const std_msgs = rosnodejs.require('std_msgs').msg;
+
+
+rosnodejs.initNode('/web_main_node')
+const nh = rosnodejs.nh;
 
 // function talker_topic() {
 //   // Register node with ROS master
@@ -54,40 +58,24 @@ const std_msgs = rosnodejs.require('std_msgs').msg;
 // }
 
 function talker() {
-  // Register node with ROS master
-  rosnodejs.initNode('/talker_node')
-    .then((rosNode) => {
-      // Create ROS publisher on the 'chatter' topic with String message
-      const nh = rosnodejs.nh;
-      const client = nh.serviceClient('/play_song', 'hongdo_ros_speak/PlaySong');
-      // let count = 0;
-      // const sequence = new hongdo_ros_speak.PlaySong();
-      // sequence = 1;
-      client.call({sequence : 1})
-      // rosnodejs.log.info('['+ response + ']')
-    });
+  const client = nh.serviceClient('/play_song', 'hongdo_ros_speak/PlaySong');
+  client.call({sequence : 1})
 }
 
 function opnecv_capture() {
-  // Register node with ROS master
-  rosnodejs.initNode('/opencv_capture_node')
-    .then((rosNode) => {
-      const nh = rosnodejs.nh;
-      const client = nh.serviceClient('/capture', 'std_srvs/Trigger');
-      client.call()
-    });
+  const client = nh.serviceClient('/capture', 'std_srvs/Trigger');
+  client.call()
 }
 
 function handshake_service() {
-  // Register node with ROS master
-  rosnodejs.initNode('/handshake_node')
-    .then((rosNode) => {
-      const nh = rosnodejs.nh;
-      const client = nh.serviceClient('/capture', 'std_srvs/Trigger');
-      client.call()
-    });
+  const client = nh.serviceClient('/capture', 'std_srvs/Trigger');
+  client.call()
 }
 
+function url_service(urlstring) {
+  const client = nh.serviceClient('/capture', 'hongdo_ros/Url');
+  client.call({url : urlstring})
+}
 
 
 
@@ -113,14 +101,13 @@ if (require.main === module) {
 
 
   app.get('/upload.html', (req,res) =>{
-    // talker_service();
+    talker();
 
     // delete saved image
-    // const { exec } = require("child_process")
-    // exec(`roscd hongdo_ros_web && cd scripts/public/img/uploads && rm -f model.jpg && rm -f hi.png`,async(err, stdout, stderr) => {
-    //   if(err) console.error(err)
-    //   console.log(stdout)
-    // })
+    exec(`cd /home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads && rm -f model.jpg && rm -f hi.png`,async(err, stdout, stderr) => {
+      if(err) console.error(err)
+      console.log(stdout)
+    })
 
     res.sendFile(__dirname+'/upload.html');
   })
@@ -139,12 +126,8 @@ if (require.main === module) {
 
 
   app.get('/loading.html', (req,res) =>{
-    handshake_service();
+    // handshake_service();
     // drawing motion 
-
-    
-
-    const { exec } = require("child_process")
     exec(`cd /home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads && python3 vision.py`,async(err, stdout, stderr) => {
       if(err) console.error(err)
       console.log(stdout)
@@ -155,13 +138,14 @@ if (require.main === module) {
 
 
   app.get('/drawn.html', (req,res) =>{
-    let readFile = fs.readFileSync(__dirname+'public/img/uploads/hi.png');
+    let readFile = fs.readFileSync('/home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads/hi.png');
     let encode = Buffer.from(readFile).toString('base64');
-    const { exec } = require("child_process");
     exec(`curl --location --request POST "https://api.imgbb.com/1/upload?expiration=600&key=e4422a3845100fe670775736ffd0e7cb" --form "image=${encode}"`, async (err, stdout, stderr) => {
         if (err) console.error(err)
         const arr = stdout.split('"');
+        url_sesrvice(arr[17]);
         console.log(arr[17]);
+
     })
     res.sendFile(__dirname+'/drawn.html');
   })
