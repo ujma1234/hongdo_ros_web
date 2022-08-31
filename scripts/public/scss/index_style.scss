@@ -1,0 +1,449 @@
+@charset "UFT-8";
+@import "reset";
+
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    .container1_no {
+        position: absolute;
+        width: 100vw;
+        height: 17vh;
+        top: 0px;
+        left: -100vw;
+        background: rgb(170, 79, 255);
+        animation: moving1 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container2_no {
+        position: absolute;
+        top: 17vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(170, 79, 255);
+        animation: moving2 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container3_no {
+        position: absolute;
+        top: 34vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(170, 79, 255);
+        animation: moving3 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container4_no {
+        position: absolute;
+        top: 51vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(170, 79, 255);
+        animation: moving4 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container5_no {
+        position: absolute;
+        top: 68vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(170, 79, 255);
+        animation: moving5 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container6_no {
+        position: absolute;
+        top: 84vh;
+        left: -100vw;
+        width: 100%;
+        height: 20vh;
+        background: rgb(170, 79, 255);
+        animation: moving6 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+
+    .container1_yes {
+        position: absolute;
+        width: 100vw;
+        height: 17vh;
+        top: 0px;
+        left: -100vw;
+        background: rgb(79, 91, 255);
+        animation: moving1 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container2_yes {
+        position: absolute;
+        top: 17vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(79, 91, 255);
+        animation: moving2 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container3_yes {
+        position: absolute;
+        top: 34vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(79, 91, 255);
+        animation: moving3 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container4_yes {
+        position: absolute;
+        top: 51vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(79, 91, 255);
+        animation: moving4 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container5_yes {
+        position: absolute;
+        top: 68vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(79, 91, 255);
+        animation: moving5 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container6_yes {
+        position: absolute;
+        top: 84vh;
+        left: -100vw;
+        width: 100%;
+        height: 20vh;
+        background: rgb(79, 91, 255);
+        animation: moving6 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+
+    @keyframes moving1 {
+        0% {left: -100vw};
+        10% {left: -100vw};
+        50% {left: 0vw};
+        100% {left: 0vw};
+    }
+    @keyframes moving2 {
+        0% {left: -100vw};
+        20% {left: -100vw};
+        60% {left: 0vw};
+        100% {left: 0vw};
+    }
+    @keyframes moving3 {
+        0% {left: -100vw};
+        30% {left: -100vw};
+        70% {left: 0vw};
+        100% {left: 0vw};
+    }
+    @keyframes moving4 {
+        0% {left:-100vw};
+        40% {left: -100vw};
+        80% {left: 0vw};
+        100% {left: 0vw};
+    }
+    @keyframes moving5 {
+        0% {left: -100vw};
+        50% {left: -100vw};
+        90% {left: 0vw};
+        100% {left: 0vw};
+    }
+    @keyframes moving6{
+        0% {left: -100vw};
+        60% {left: -100vw};
+        100% {left: 0vw};
+    }
+}
+main {
+    width: 100%;
+    height: 100vh;
+    background: #b1e1e2;
+    overflow: hidden;
+
+    .off_hong2 {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .hong2 {
+        width: 30vw;
+        height: 50vh;
+        position: absolute;
+        margin-top: 25vh;
+        margin-left: 10vw;
+        animation: swashIn 1s;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .intro1 {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        margin-top: 40vh;
+        font: 20vh/1 "Jua";
+        animation: hidden linear 4s;
+        opacity: 0;
+    }
+
+    .intro2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font: 4vh/1 "Jua";
+        margin-top: 30vh;
+        margin-left: 45vw;
+        animation: text1 linear 8s;
+    }
+
+    .intro3 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font: 4vh/1 "Jua";
+        margin-top: 40vh;
+        margin-left: 45vw;
+        animation: text1 linear 10s;
+    }
+
+    .intro4 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font: 4vh/1 "Jua";
+        margin-top: 50vh;
+        margin-left: 45vw;
+        animation: text1 linear 12s;
+    }
+
+    .intro5 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font: 4vh/1 "Jua";
+        margin-top: 60vh;
+        margin-left: 45vw;
+        animation: text1 linear 14s;
+    }
+
+    .off_text1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font: 4vh/1 "Jua";
+        margin-top: 30vh;
+        margin-left: 45vw;
+    }
+
+    .off_text2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font: 4vh/1 "Jua";
+        margin-top: 40vh;
+        margin-left: 45vw;
+    }
+
+    .off_text3 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font: 4vh/1 "Jua";
+        margin-top: 50vh;
+        margin-left: 45vw;
+    }
+
+    .off_text4 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font: 4vh/1 "Jua";
+        margin-top: 50vh;
+        margin-left: 66vw;
+        transform: scale(1.4);
+        animation: moving 2s;
+    }
+
+    .off_text1, .off_text2, .off_text3 {
+        opacity: 0;
+        animation: hide linear 2s;
+    }
+
+    .yes_box {
+        position: absolute;
+        width: 15vw;
+        height: 15vh;
+        top: 0px;
+        left: 0px;
+        margin-top: 44vh;
+        margin-left: 70vw;
+        background: rgb(79, 91, 255);
+        border-radius: 5vh;
+        box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        0 100px 80px rgba(0, 0, 0, 0.07);
+        animation: swashIn 2s;
+
+        a {
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            color: #333;
+            font:6vh/1 "Jua";
+        }
+    }
+
+    .no_box {
+        position: absolute;
+        width: 15vw;
+        height: 15vh;
+        top: 0px;
+        left: 0px;
+        margin-top: 44vh;
+        margin-left: 46vw;
+        background:  rgb(170, 79, 255);
+        border-radius: 5vh;
+        box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        0 100px 80px rgba(0, 0, 0, 0.07);
+        cursor: pointer;
+        animation: swashIn 2s;
+
+        a {
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            color: #333;
+            font:6vh/1 "Jua";
+        }
+    }
+
+    .box1, .box2 {
+        visibility: hidden;
+    }
+}
+
+
+
+@keyframes moving {
+    0% {transform: scale(1); margin-top: 60vh; margin-left: 45vw;}
+    100% {margin-top: 50vh; transform: scale(1.4); margin-left: 66vw;}
+}
+
+@keyframes hide {
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+@keyframes hidden {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    75% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes text1 {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    80% {opacity: 1;}
+    100% {opacity: 1;}
+}
+
+@-webkit-keyframes swashIn {
+    0% {
+      opacity: 0;
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform: scale(0, 0);
+      transform: scale(0, 0);
+    }
+  
+    90% {
+      opacity: 1;
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform: scale(0.9, 0.9);
+      transform: scale(0.9, 0.9);
+    }
+  
+    100% {
+      opacity: 1;
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1);
+    }
+  }
+  @keyframes swashIn {
+    0% {
+      opacity: 0;
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform: scale(0, 0);
+      transform: scale(0, 0);
+    }
+  
+    90% {
+      opacity: 1;
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform: scale(0.9, 0.9);
+      transform: scale(0.9, 0.9);
+    }
+  
+    100% {
+      opacity: 1;
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1);
+    }
+  }
+  

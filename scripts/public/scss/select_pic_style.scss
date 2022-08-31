@@ -1,0 +1,353 @@
+@charset "UFT-8";
+@import "reset";
+
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+body {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #b1e1e2;
+
+    .container1_no {
+        position: absolute;
+        width: 100vw;
+        height: 17vh;
+        top: 0px;
+        left: -100vw;
+        background: rgb(170, 79, 255);
+        animation: moving1 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container2_no {
+        position: absolute;
+        top: 17vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(170, 79, 255);
+        animation: moving2 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container3_no {
+        position: absolute;
+        top: 34vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(170, 79, 255);
+        animation: moving3 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container4_no {
+        position: absolute;
+        top: 51vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(170, 79, 255);
+        animation: moving4 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container5_no {
+        position: absolute;
+        top: 68vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(170, 79, 255);
+        animation: moving5 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container6_no {
+        position: absolute;
+        top: 84vh;
+        left: -100vw;
+        width: 100%;
+        height: 20vh;
+        background: rgb(170, 79, 255);
+        animation: moving6 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+
+    .container1_yes {
+        position: absolute;
+        width: 100vw;
+        height: 17vh;
+        top: 0px;
+        left: -100vw;
+        background: rgb(79, 91, 255);
+        animation: moving1 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container2_yes {
+        position: absolute;
+        top: 17vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(79, 91, 255);
+        animation: moving2 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container3_yes {
+        position: absolute;
+        top: 34vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(79, 91, 255);
+        animation: moving3 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container4_yes {
+        position: absolute;
+        top: 51vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(79, 91, 255);
+        animation: moving4 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container5_yes {
+        position: absolute;
+        top: 68vh;
+        left: -100vw;
+        width: 100%;
+        height: 17vh;
+        background: rgb(79, 91, 255);
+        animation: moving5 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+    .container6_yes {
+        position: absolute;
+        top: 84vh;
+        left: -100vw;
+        width: 100%;
+        height: 20vh;
+        background: rgb(79, 91, 255);
+        animation: moving6 ease-out 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        z-index: 10;
+    }
+
+    @keyframes moving1 {
+        0% {left: -100vw};
+        10% {left: -100vw};
+        50% {left: 0vw};
+        100% {left: 0vw};
+    }
+    @keyframes moving2 {
+        0% {left: -100vw};
+        20% {left: -100vw};
+        60% {left: 0vw};
+        100% {left: 0vw};
+    }
+    @keyframes moving3 {
+        0% {left: -100vw};
+        30% {left: -100vw};
+        70% {left: 0vw};
+        100% {left: 0vw};
+    }
+    @keyframes moving4 {
+        0% {left:-100vw};
+        40% {left: -100vw};
+        80% {left: 0vw};
+        100% {left: 0vw};
+    }
+    @keyframes moving5 {
+        0% {left: -100vw};
+        50% {left: -100vw};
+        90% {left: 0vw};
+        100% {left: 0vw};
+    }
+    @keyframes moving6{
+        0% {left: -100vw};
+        60% {left: -100vw};
+        100% {left: 0vw};
+    }
+
+    main {
+        width: 100%;
+        height: 100%;
+        
+        .img_box {
+            height: 70vh;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            opacity: 0;
+            width: 10vw;
+            margin-top: 10vh;
+            margin-left: 45vw;
+            display: flex;
+            animation: swap  1s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+
+            @keyframes swap {
+                0% {
+                  opacity: 0;
+                  -webkit-transform-origin: 0 100%;
+                  transform-origin: 0 100%;
+                  -webkit-transform: scale(0, 0) translate(-700px, 0px);
+                  transform: scale(0, 0) translate(-700px, 0px);
+                }
+              
+                100% {
+                  opacity: 1;
+                  -webkit-transform-origin: 100% 100%;
+                  transform-origin: 100% 100%;
+                  -webkit-transform: scale(1, 1) translate(0px, 0px);
+                  transform: scale(1, 1) translate(0px, 0px);
+                }
+              }
+
+            .duru1 {
+                position: relative;
+                width: 50%;
+                height: 100%;
+                border: 1px solid blue;
+                left: 0vh;
+                animation: left-move ease-in 1s ;
+                animation-delay: 2.5s;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes left-move {
+                0%{left:0vh;};
+                100%{left: -30vw;};
+            }
+
+            .box {
+                position: absolute;
+                left: 5vw;
+                top: 2.5vh;
+                width: 0vw;
+                height: 65vh;
+                background: #fff;
+                animation: box-move ease-in 1s;
+                animation-fill-mode: forwards;
+                animation-delay: 2.5s;
+            }
+
+            @keyframes box-move {
+                0%{left: 5vw; width: 0vw};
+                100%{left: -25vw; width: 60vw};
+            }
+
+            .duru2 {
+                position: relative;
+                width: 50%;
+                height: 100%;
+                border: 1px solid blue;
+                left: 0vh;
+                animation: right-move ease-in 1s ;
+                animation-delay: 2.5s;
+                animation-fill-mode: forwards;
+            }
+            @keyframes right-move {
+                0%{left:0vh;};
+                100%{left: 30vw;};
+            }
+        }
+
+        .text1 {
+            position: relative;
+            margin-top: 70vh;
+            text-align: center;
+            font: 7vh/1 "Jua";
+            color: #444;
+            opacity: 0;
+            z-index: 9;
+            animation: blind linear 1s;
+            animation-delay: 4s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes blind {
+            0%{opacity: 0};
+            100%{opacity: 0.8};
+        }
+
+        .btn_no {
+            position: absolute;
+            margin-top: 83vh;
+            margin-left: 30vw;
+            top: 0px;
+            left: 0px;
+            width: 15vw;
+            height: 10vh;
+            border-radius: 3vh;
+            text-decoration: none;
+            background: rgb(170, 79, 255);
+            animation: swap 500ms;
+            animation-delay: 5s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            
+            a {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                font: 4vh/1 "Jua";
+                color: #333;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .btn_yes {
+            position: absolute;
+            margin-top: 83vh;
+            margin-left: 55vw;
+            border-radius: 3vh;
+            top: 0px;
+            left: 0px;
+            width: 15vw;
+            height: 10vh;
+            background: rgb(79, 91, 255);
+            text-decoration: none;
+            animation: swap 500ms;
+            animation-delay: 5s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+
+            a {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                font: 4vh/1 "Jua";
+                color: #333;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    
+}
