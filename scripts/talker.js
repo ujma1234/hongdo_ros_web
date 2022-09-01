@@ -36,27 +36,6 @@ const {exec} = require("child_process");
 rosnodejs.initNode('/web_main_node')
 const nh = rosnodejs.nh;
 
-// function talker_topic() {
-//   // Register node with ROS master
-//   rosnodejs.initNode('/talker_node')
-//     .then((rosNode) => {
-//       // Create ROS publisher on the 'chatter' topic with String message
-//       let pub = rosNode.advertise('/chatter', std_msgs.String);
-//       let count = 0;
-//       const msg = new std_msgs.String();
-//       // Define a function to execute every 100ms
-//       setInterval(() => {
-//         // Construct the message
-//         msg.data = 'hello world ' + count;
-//         // Publish over ROS
-//         pub.publish(msg);
-//         // Log through stdout and /rosout
-//         rosnodejs.log.info('I said: [' + msg.data + ']');
-//         ++count;
-//       }, 100);
-//     });
-// }
-
 function talker() {
   const client = nh.serviceClient('/play_song', 'hongdo_ros_speak/PlaySong');
   client.call({sequence : 1})
@@ -92,6 +71,7 @@ if (require.main === module) {
 
   app.get('/intro.html', (req,res) =>{
     res.sendFile(__dirname+'/intro.html');
+    console.log(__dirname)
   })
 
 
