@@ -118,41 +118,20 @@ if (require.main === module) {
     res.sendFile(__dirname+'/loading.html');
   })
 
-
-  app.get('/drawn.html', (req,res) =>{
+  app.get('/QR_make.html', (req,res) => {
     imgbbUploader("e4422a3845100fe670775736ffd0e7cb", '/home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads/hi.png'). then((response)=>
       url_service(JSON.stringify(response.url))
     )
     .catch((error) => 
       console.error(error)
     );
-    res.sendFile(__dirname+'/drawn.html');
+    res.sendFile(__dirname+'/QR_make.html');
   })
 
-  async function uploadImage(img)
- {
-    var form = new FormData();
-    form.append('image', img)
 
-    var url = 'https://api.imgbb.com/1/upload?expiration=600&key=e4422a3845100fe670775736ffd0e7cb' 
-
-    const config = {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Connection': 'keep-alive',
-            'Content-Type': 'application/json',
-        },
-        body: form
-    }
-
-    const response = await fetch(url, config)
-    const json = await response.json()
-
-    console.log(response)
- }
-
+  app.get('/drawn.html', (req,res) =>{
+    res.sendFile(__dirname+'/drawn.html');
+  })
 
 
   app.get('/game_intro.html', (req,res) =>{
