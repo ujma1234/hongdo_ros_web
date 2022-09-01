@@ -19,7 +19,7 @@
     "express": "^4.18.1",
     "folder": "0.0.4",
     "imgbb-uploader": "^1.5.0",
-    "rosnodejs": "2.1.1",
+    "rosnodejs": "^2.1.1",
     "tarball": "0.0.5",
     "url": "^0.11.0"
   }

@@ -26,7 +26,6 @@
 const rosnodejs = require('rosnodejs');
 const express = require('express');
 const app = express();
-const imgbbUploader = require("imgbb-uploader")
 const path = require('path');
 const fs = require('fs')
 const port = 5000;
