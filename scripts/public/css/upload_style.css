@@ -13,6 +13,15 @@ a {
   text-decoration: none;
 }
 
+.btn_home {
+  z-index: 31;
+  width: 40px;
+  height: 40px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+}
+
 body {
   width: 100%;
   height: 100vh;
@@ -206,9 +215,9 @@ body main .hong2 img {
   }
 }
 body main .text {
-  width: 100%;
   position: absolute;
-  margin-top: 83vh;
+  top: 83vh;
+  width: 100vw;
   text-align: center;
   font: 7vh/1 "Jua";
   color: #444;
@@ -279,17 +288,7 @@ body main .display {
   animation: display_1 linear 1s;
   animation-fill-mode: forwards;
 }
-body main .display .myVideo {
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  position: absolute;
-  object-fit: cover;
-  transform: scaleX(-1);
-}
 body main .off_display {
-  position: absolute;
   visibility: hidden;
 }
 @keyframes display_1 {
@@ -301,22 +300,12 @@ body main .off_display {
     width: 1px;
     height: 15vh;
     margin-top: 42.5vh;
-    border: none;
   }
   31% {
     left: 40vh;
     height: 80vh;
     margin-top: 10vh;
     width: 1px;
-    border: none;
-  }
-  95%{
-    left: 40vh;
-    height: 80vh;
-    margin-top: 10vh;
-    width: 90vh;
-    left: 5vh;
-    border: none;
   }
   100% {
     left: 40vh;

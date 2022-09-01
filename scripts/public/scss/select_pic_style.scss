@@ -232,11 +232,16 @@ body {
                 position: relative;
                 width: 50%;
                 height: 100%;
-                border: 1px solid blue;
                 left: 0vh;
                 animation: left-move ease-in 1s ;
                 animation-delay: 2.5s;
                 animation-fill-mode: forwards;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                }
             }
 
             @keyframes left-move {
@@ -250,10 +255,28 @@ body {
                 top: 2.5vh;
                 width: 0vw;
                 height: 65vh;
-                background: #fff;
                 animation: box-move ease-in 1s;
                 animation-fill-mode: forwards;
                 animation-delay: 2.5s;
+
+                .model {
+                    z-index: 2;
+                    position: absolute;
+                    width: 80%;
+                    height: 80%;
+                    top: 10%;
+                    left: 10%;
+                    object-fit: contain;
+                }
+
+                .duru_bg {
+                    z-index: 1;
+                    position: absolute;
+                    width: 100%;
+                    height: 95%;
+                    top: 2.5%;
+                    object-fit: fill;
+                }
             }
 
             @keyframes box-move {
@@ -265,11 +288,16 @@ body {
                 position: relative;
                 width: 50%;
                 height: 100%;
-                border: 1px solid blue;
                 left: 0vh;
                 animation: right-move ease-in 1s ;
                 animation-delay: 2.5s;
                 animation-fill-mode: forwards;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                }
             }
             @keyframes right-move {
                 0%{left:0vh;};
@@ -279,10 +307,10 @@ body {
 
         .text1 {
             position: relative;
-            margin-top: 70vh;
+            margin-top: 3.5vh;
             text-align: center;
             font: 7vh/1 "Jua";
-            color: #444;
+            color: rgb(21, 22, 19);
             opacity: 0;
             z-index: 9;
             animation: blind linear 1s;

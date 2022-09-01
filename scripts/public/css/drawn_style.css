@@ -13,6 +13,15 @@ a {
   text-decoration: none;
 }
 
+.btn_home {
+  z-index: 31;
+  width: 40px;
+  height: 40px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+}
+
 body {
   position: absolute;
   width: 100%;
@@ -117,12 +126,18 @@ body main .QR_box {
   height: 15vw;
   top: 20vh;
   left: 70vw;
-  background: #fff;
-  border: 1px solid red;
   opacity: 0;
   animation: vanishIn 1s;
   animation-delay: 2.7s;
   animation-fill-mode: forwards;
+}
+body main .QR_box img {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  object-fit: contain;
 }
 @keyframes vanishIn {
   0% {

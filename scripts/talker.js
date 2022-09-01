@@ -26,6 +26,7 @@
 const rosnodejs = require('rosnodejs');
 const express = require('express');
 const app = express();
+const imgbbUploader = require("imgbb-uploader")
 const path = require('path');
 const fs = require('fs')
 const port = 5000;
@@ -145,7 +146,7 @@ if (require.main === module) {
     
 
     const { exec } = require("child_process")
-    exec(`cd /home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads && python3 vision.py`,async(err, stdout, stderr) => {
+    exec(`cd /home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads && python3.8 vision.py`,async(err, stdout, stderr) => {
       if(err) console.error(err)
       console.log(stdout)
     })
@@ -156,15 +157,37 @@ if (require.main === module) {
 
   app.get('/drawn.html', (req,res) =>{
     let readFile = fs.readFileSync(__dirname+'public/img/uploads/hi.png');
-    let encode = Buffer.from(readFile).toString('base64');
-    const { exec } = require("child_process");
-    exec(`curl --location --request POST "https://api.imgbb.com/1/upload?expiration=600&key=e4422a3845100fe670775736ffd0e7cb" --form "image=${encode}"`, async (err, stdout, stderr) => {
-        if (err) console.error(err)
-        const arr = stdout.split('"');
-        console.log(arr[17]);
-    })
+  imgbbUploader("e4422a3845100fe670775736ffd0e7cb", "public/img/uploads/hi.png")
+  .then((response) => console.log(response))
+  .catch((error) => console.error(error));
+  
     res.sendFile(__dirname+'/drawn.html');
   })
+
+  async function uploadImage(img)
+ {
+    var form = new FormData();
+    form.append('image', img)
+
+    var url = 'https://api.imgbb.com/1/upload?expiration=600&key=e4422a3845100fe670775736ffd0e7cb' 
+
+    const config = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Connection': 'keep-alive',
+            'Content-Type': 'application/json',
+        },
+        body: form
+    }
+
+    const response = await fetch(url, config)
+    const json = await response.json()
+
+    console.log(response)
+ }
+
 
 
   app.get('/game_intro.html', (req,res) =>{

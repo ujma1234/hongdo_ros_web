@@ -13,6 +13,15 @@ a {
   text-decoration: none;
 }
 
+.btn_home {
+  z-index: 31;
+  width: 40px;
+  height: 40px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+}
+
 body {
   width: 100%;
   height: 100vh;
@@ -62,21 +71,21 @@ body main .box .txt1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font: 6vh "Jua";
+  font: 7vh "Jua";
 }
 body main .box .txt2 {
-  margin-top: 7vh;
+  margin-top: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font: 6vh "Jua";
+  font: 7vh "Jua";
 }
 body main .box .txt3 {
-  margin-top: 7vh;
+  margin-top: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font: 6vh "Jua";
+  font: 7vh "Jua";
 }
 body main .announce {
   position: absolute;
