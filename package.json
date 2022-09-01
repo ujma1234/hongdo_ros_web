@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:89a03483bd9d8d05d5f7480a98ee0d46b0bae24aa23528ab541ed2a8e953fdf7
-size 515
+{
+  "name": "rosnodejs_examples",
+  "version": "0.0.0",
+  "description": "Example programs for ROS Node Javascript client library",
+  "keywords": [
+    "ros"
+  ],
+  "scripts": {
+    "talker": "node scripts/talker.js",
+    "listener": "node scripts/listener.js"
+  },
+  "author": "Ian McMahon",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/RethinkRobotics-opensource/rosnodejs_examples"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "folder": "0.0.4",
+    "imgbb-uploader": "^1.5.0",
+    "rosnodejs": "2.1.1",
+    "tarball": "0.0.5",
+    "url": "^0.11.0"
+  }
+}

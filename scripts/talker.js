@@ -30,15 +30,16 @@ const path = require('path');
 const fs = require('fs')
 const port = 5000;
 const {exec} = require("child_process");
+const imgbbUploader = require("imgbb-uploader");
 // Requrotires the std_msgs message package
 
 
-rosnodejs.initNode('/web_main_node')
+rosnodejs.initNode('/hongdo_ros_web_node')
 const nh = rosnodejs.nh;
 
-function talker() {
+function sound_play(number) {
   const client = nh.serviceClient('/play_song', 'hongdo_ros_speak/PlaySong');
-  client.call({sequence : 1})
+  client.call({sequence : number})
 }
 
 function opnecv_capture() {
@@ -47,12 +48,12 @@ function opnecv_capture() {
 }
 
 function handshake_service() {
-  const client = nh.serviceClient('/capture', 'std_srvs/Trigger');
+  const client = nh.serviceClient('/execution', 'std_srvs/Trigger');
   client.call()
 }
 
 function url_service(urlstring) {
-  const client = nh.serviceClient('/capture', 'hongdo_ros/Url');
+  const client = nh.serviceClient('/make_qr', 'hongdo_ros_speak/UrlTunnel');
   client.call({url : urlstring})
 }
 
@@ -71,7 +72,7 @@ if (require.main === module) {
 
   app.get('/intro.html', (req,res) =>{
     res.sendFile(__dirname+'/intro.html');
-    console.log(__dirname)
+    console.log(__dirname+'')
   })
 
 
@@ -81,10 +82,10 @@ if (require.main === module) {
 
 
   app.get('/upload.html', (req,res) =>{
-    talker();
+    // talker();
 
     // delete saved image
-    exec(`cd /home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads && rm -f model.jpg && rm -f hi.png`,async(err, stdout, stderr) => {
+    exec(`cd /home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads && rm -f model.jpg && rm -f hi.png && rm -f AIimage.png`,async(err, stdout, stderr) => {
       if(err) console.error(err)
       console.log(stdout)
     })
@@ -118,15 +119,12 @@ if (require.main === module) {
 
 
   app.get('/drawn.html', (req,res) =>{
-    let readFile = fs.readFileSync('/home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads/hi.png');
-    let encode = Buffer.from(readFile).toString('base64');
-    exec(`curl --location --request POST "https://api.imgbb.com/1/upload?expiration=600&key=e4422a3845100fe670775736ffd0e7cb" --form "image=${encode}"`, async (err, stdout, stderr) => {
-        if (err) console.error(err)
-        const arr = stdout.split('"');
-        url_sesrvice(arr[17]);
-        console.log(arr[17]);
-
-    })
+    imgbbUploader("e4422a3845100fe670775736ffd0e7cb", '/home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads/hi.png'). then((response)=>
+      url_service(JSON.stringify(response.url))
+    )
+    .catch((error) => 
+      console.error(error)
+    );
     res.sendFile(__dirname+'/drawn.html');
   })
 
