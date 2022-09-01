@@ -147,8 +147,9 @@ body {
         }
 
         .text {
-            position: relative;
-            margin-top: 83vh;
+            position: absolute;
+            top: 83vh;
+            width: 100vw;
             text-align: center;
             font: 7vh/1 "Jua";
             color: #444;

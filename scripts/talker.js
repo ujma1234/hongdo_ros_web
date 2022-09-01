@@ -26,6 +26,7 @@
 const rosnodejs = require('rosnodejs');
 const express = require('express');
 const app = express();
+const imgbbUploader = require("imgbb-uploader")
 const path = require('path');
 const fs = require('fs')
 const port = 5000;
@@ -127,6 +128,31 @@ if (require.main === module) {
     );
     res.sendFile(__dirname+'/drawn.html');
   })
+
+  async function uploadImage(img)
+ {
+    var form = new FormData();
+    form.append('image', img)
+
+    var url = 'https://api.imgbb.com/1/upload?expiration=600&key=e4422a3845100fe670775736ffd0e7cb' 
+
+    const config = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Connection': 'keep-alive',
+            'Content-Type': 'application/json',
+        },
+        body: form
+    }
+
+    const response = await fetch(url, config)
+    const json = await response.json()
+
+    console.log(response)
+ }
+
 
 
   app.get('/game_intro.html', (req,res) =>{

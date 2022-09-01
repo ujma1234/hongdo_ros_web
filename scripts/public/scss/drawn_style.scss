@@ -26,7 +26,7 @@ body {
         height: 100%;
 
         .img_box {
-            width: 45vw;
+            width: 50vw;
             height: 10vh;
             top: 0vh;
             left: 0vw;
@@ -55,17 +55,38 @@ body {
                 position: relative;
                 width: 100%;
                 height: 5vh;
-                border: 1px solid blue;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: fill;
+                }
             }
 
             .img_b {
                 position: relative;
-                width: 100%;
+                width: 90%;
+                left: 5%;
                 height: 1px;
                 background: #fff;
                 animation: down_box ease-out 1.5s;
                 animation-fill-mode: forwards;
                 animation-delay: 1.2s;
+
+                .hi {
+                  position: absolute;
+                  width: 80%;
+                  height: 80%;
+                  top: 5%;
+                  left: 10%;
+                  object-fit: contain;
+                }
+
+                .duru_bg {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: fill;
+                }
             }
 
             @keyframes down_box {
@@ -75,13 +96,18 @@ body {
 
             .duru2 {
                 position: absolute;
-                width: 45vw;
+                width: 100%;
                 height: 5vh;
                 top: 5vh;
-                border: 1px solid purple;
                 animation: down ease-out 1.5s;
                 animation-delay: 1.2s;
                 animation-fill-mode: forwards;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: fill;
+                }
             }
 
             @keyframes down {
@@ -96,12 +122,19 @@ body {
             height: 15vw;
             top: 20vh;
             left: 70vw;
-            background: #fff;
-            border: 1px solid red;
             opacity: 0;
             animation: vanishIn 1s;
             animation-delay: 2.7s;
             animation-fill-mode: forwards;
+
+            img {
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              position: absolute;
+              object-fit: contain;
+            }
         }
 
         @keyframes vanishIn {
