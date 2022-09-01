@@ -156,6 +156,16 @@ if (require.main === module) {
 
   })
 
+  app.get('/QR_make.html', (req,res) => {
+    // imgbbUploader("e4422a3845100fe670775736ffd0e7cb", '/home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads/hi.png'). then((response)=>
+    //   url_service(JSON.stringify(response.url))
+    // )
+    // .catch((error) => 
+    //   console.error(error)
+    // );
+    res.sendFile(__dirname+'/QR_make.html');
+  })
+
 
   app.get('/drawn.html', (req,res) =>{
     // let readFile = fs.readFileSync('/Users/geseuteu/Documents/UI_HTML/hongdo_ros_web/scripts/public/img/uploads/hi.png');

@@ -288,6 +288,14 @@ body main .display {
   animation: display_1 linear 1s;
   animation-fill-mode: forwards;
 }
+body main .display .myVideo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: fill;
+}
 body main .off_display {
   visibility: hidden;
 }

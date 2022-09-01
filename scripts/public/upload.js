@@ -55,17 +55,30 @@ function getVideo(){
   });
 }
 
-// if (!navigator.mediaDevices?.enumerateDevices) {
-//     console.log("enumerateDevices() not supported.");
-//   } else {
-//     // List cameras and microphones.
-//     navigator.mediaDevices.enumerateDevices()
-//       .then((devices) => {
-//         devices.forEach((device) => {
-//           console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
-//         });
-//       })
-//       .catch((err) => {
-//         console.error(`${err.name}: ${err.message}`);
-//       });
-//   }
+
+if (!navigator.mediaDevices?.enumerateDevices) {
+    console.log("enumerateDevices() not supported.");
+  } else {
+    // List cameras and microphones.
+    navigator.mediaDevices.enumerateDevices()
+      .then((devices) => {
+        devices.forEach((device) => {
+          console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
+        });
+      })
+      .catch((err) => {
+        console.error(`${err.name}: ${err.message}`);
+      });
+  }
+
+  const btn_home = document.getElementById("btn_home");
+
+var go_home = 0;
+
+btn_home.addEventListener("click",e=>{
+    go_home++;
+    if(go_home >= 5) {
+        location.replace("intro.html");
+    }
+});
+

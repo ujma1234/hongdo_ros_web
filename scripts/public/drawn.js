@@ -1,34 +1,17 @@
-const button = document.querySelector('.button');
-const submit = document.querySelector('.submit');
+const timeout = setTimeout(()=>{
+    document.getElementById("real_bg").className = "real_bg";
+},100);
+const timeout1 = setTimeout(()=>{
+    document.getElementById("real_bg").className = "off_real_bg";
+    document.getElementById("bg").className = "off_real_bg";
+},1100);
+const timeout3 = setTimeout(()=>{
+    document.getElementById("box1").className = "img_box";
+    document.getElementById("box2").className = "QR_box";
+    document.getElementById("txt1").className = "announce";
+    document.getElementById("txt2").className = "text";
+},1200);
 
-function toggleClass() {
-  this.classList.toggle('active');
-}
-
-function addClass() {
-  this.classList.add('finished');
-}
-
-button.addEventListener('click', toggleClass);
-button.addEventListener('click', e=>{
-    const timeout = setTimeout(()=>{
-        document.getElementById("real_bg").className = "real_bg";
-    },5000);
-    const timeout1 = setTimeout(()=>{
-        document.getElementById("btn").className = "hide";
-        document.getElementById("real_bg").className = "off_real_bg";
-        document.getElementById("bg").className = "off_real_bg";
-    },6000);
-    const timeout3 = setTimeout(()=>{
-        document.getElementById("box1").className = "img_box";
-        document.getElementById("box2").className = "QR_box";
-        document.getElementById("txt1").className = "announce";
-        document.getElementById("txt2").className = "text";
-    },7000);
-});
-
-button.addEventListener('transitionend', toggleClass);
-button.addEventListener('transitionend', addClass);
 
 const next  = document.getElementById("txt2");
 next.addEventListener("click", e=>{
