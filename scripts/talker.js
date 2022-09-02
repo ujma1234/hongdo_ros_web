@@ -115,7 +115,7 @@ if (require.main === module) {
 
 
   app.get('/loading.html', (req,res) =>{
-    // handshake_service();
+    handshake_service();
     // drawing motion 
     exec(`cd /home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads && python3 vision.py`,async(err, stdout, stderr) => {
       if(err) console.error(err)
