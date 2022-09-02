@@ -184,7 +184,6 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border-bottom: 1px solid black;
             }
 
             .tar {
@@ -263,7 +262,7 @@ body {
                 left: 20vw;
                 background: rgba(255,255,255,0.5);
                 opacity: 0;
-                animation: vanishIn 2s;
+                animation: vanishIn 0.6s;
                 animation-fill-mode: forwards;
                 
                 .q {
@@ -321,7 +320,7 @@ body {
                 left: 20vw;
                 background: rgba(255,255,255,0.5);
                 opacity: 1;
-                animation: vanishOut 2s;
+                animation: vanishOut 0.6s;
                 animation-fill-mode: forwards;
                 
                 .q {
@@ -428,6 +427,11 @@ body {
             visibility: hidden;
         }
     }
+
+    .off_game_skip {
+        visibility: hidden;
+    }
+
     .off {
         visibility: hidden;
     }
@@ -799,7 +803,7 @@ body {
                 height: 80%;
                 top: 10%;
                 left: 10%;
-                font: 20vh "jua";
+                font: 10vh "jua";
                 color: rgb(202, 233, 125);
                 opacity: 0;
                 display: flex;
@@ -1036,6 +1040,43 @@ body {
                 left: 2%;
                 font: 2vh "jua";
                 color: rgb(202, 233, 125);
+            }
+
+            .game_skip {
+                cursor: pointer;
+                width: 13%;
+                height: 10%;
+                position: absolute;
+                left: 2%;
+                top: 86%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #f48f4c;
+                border-radius: 3vh;
+                font: 3vh "jua";
+            }
+
+            .off_game_skip {
+                visibility: hidden;
+            }
+
+            .bye_game_skip {
+                cursor: pointer;
+                width: 13%;
+                height: 10%;
+                position: absolute;
+                left: 2%;
+                top: 86%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #f48f4c;
+                border-radius: 3vh;
+                font: 3vh "jua";
+                opacity: 1;
+                animation: fadeout 1s linear;
+                animation-fill-mode: forwards;
             }
 
             .bye_skill_announce {
@@ -1462,8 +1503,98 @@ body {
                     animation-fill-mode: forwards;
                 }
             }
+
+            .off_realBye {
+                visibility: hidden;
+            }
+
+            .realBye {
+                position: absolute;
+                display: flex;
+                flex-wrap: wrap;
+                width: 70%;
+                height: 70%;
+                top: 15%;
+                left: 15%;
+                background: rgba(255,255,255, 0.8);
+                z-index: 31;
+                opacity: 0;
+                animation: fadein 0.5s;
+                animation-fill-mode: forwards;
+                
+                .realByeQ {
+                    width: 100%;
+                    height: 60%;
+                    display: flex;
+                    font: 7vh "jua";
+                    color: #000;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .realY, .realN {
+                    width: 50%;
+                    height: 40%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font: 4vh "jua";
+                }
+
+                .realY {
+                    background: rgba(245, 138, 163, 0.3);
+                }
+
+                .realN {
+                    background: rgba(186, 210, 109, 0.3);
+                }
+            }
+
+            .bye_realBye {
+                position: absolute;
+                display: flex;
+                flex-wrap: wrap;
+                width: 70%;
+                height: 70%;
+                top: 15%;
+                left: 15%;
+                background: rgba(255,255,255, 0.8);
+                z-index: 31;
+                opacity: 1;
+                animation: fadeout 0.5s;
+                animation-fill-mode: forwards;
+                
+                .realByeQ {
+                    width: 100%;
+                    height: 60%;
+                    display: flex;
+                    font: 7vh "jua";
+                    color: #000;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .realY, .realN {
+                    width: 50%;
+                    height: 40%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font: 4vh "jua";
+                }
+
+                .realY {
+                    background: rgba(245, 138, 163, 0.3);
+                }
+
+                .realN {
+                    background: rgba(186, 210, 109, 0.3);
+                }
+            }
         }
     }
+
+
 }
 @keyframes fadeout {
     0%{opacity: 1;}

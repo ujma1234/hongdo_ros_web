@@ -2,9 +2,16 @@ const timeout1 = setTimeout(()=> {
     document.getElementById("hong2_box").className = "hong2";
 }, 2500)
 
-    
+var voice = new Audio('audio/speech/2.mp3');
+voice.muted = true;
+voice.play();
+
+setTimeout(()=>{
+  voice.muted = false;
+},4000);
 
 const timeout3 = setTimeout(()=> {
+    
     document.getElementById("camera_box").className = "btn";
 
     document.getElementById("txt1").className = "text"

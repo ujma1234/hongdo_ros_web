@@ -35,6 +35,8 @@ window.onresize = function (event) {
 }
 
 polygonCenter.addEventListener("click", function () {
+    var intro_audio = new Audio('audio/effect/intro.mp3');
+    intro_audio.play();
     tl.play("start");
     this.removeEventListener("click", arguments.callee);
 }, false);
