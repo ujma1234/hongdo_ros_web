@@ -38,7 +38,11 @@ rosnodejs.initNode('/hongdo_ros_web_node')
 const nh = rosnodejs.nh;
 
 function sound_play(number) {
-  const client = nh.serviceClient('/play_song', 'hongdo_ros_speak/PlaySong');
+  const client = nh.serviceClient('/play_song', 'hongdo_ros_webconnect/PlaySong');
+  client.call({sequence : number})
+}
+function voice_play(number) {
+  const client = nh.serviceClient('/play_voice', 'hongdo_ros_webconnect/PlaySong');
   client.call({sequence : number})
 }
 
@@ -53,7 +57,7 @@ function handshake_service() {
 }
 
 function url_service(urlstring) {
-  const client = nh.serviceClient('/make_qr', 'hongdo_ros_speak/UrlTunnel');
+  const client = nh.serviceClient('/make_qr', 'hongdo_ros_webconnect/UrlTunnel');
   client.call({url : urlstring})
 }
 
@@ -68,21 +72,24 @@ if (require.main === module) {
   })
   app.listen(port, ()=>{
     console.log(`The express`);
+    
   })
 
   app.get('/intro.html', (req,res) =>{
     res.sendFile(__dirname+'/intro.html');
     console.log(__dirname+'')
+    // sound_play(1)
   })
 
 
   app.get('/index.html', (req,res) =>{
     res.sendFile(__dirname+'/index.html');
+    voice_play(1); //1번 녹음파일 ~ 2번녹음파일
   })
 
 
   app.get('/upload.html', (req,res) =>{
-    // talker();
+    
 
     // delete saved image
     exec(`cd /home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads && rm -f model.jpg && rm -f hi.png && rm -f AIimage.png`,async(err, stdout, stderr) => {
@@ -91,6 +98,7 @@ if (require.main === module) {
     })
 
     res.sendFile(__dirname+'/upload.html');
+    voice_play(2); //3번 녹음파일(사진찍기 ~)
   })
 
   app.get('/taking_pic.html', (req,res) =>{
@@ -102,7 +110,7 @@ if (require.main === module) {
 
   app.get('/select_pic.html', (req,res) =>{
     res.sendFile(__dirname+'/select_pic.html');
-    
+    voice_play(3); //4번녹음 파일(이 사진 ~)
   })
 
 
@@ -120,6 +128,7 @@ if (require.main === module) {
   app.get('/QR_make.html', (req,res) => {
     imgbbUploader("e4422a3845100fe670775736ffd0e7cb", '/home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads/hi.png'). then((response)=>
       url_service(JSON.stringify(response.url))
+      // console.log(JSON.stringify(response.url))
     )
     .catch((error) => 
       console.error(error)
@@ -130,16 +139,19 @@ if (require.main === module) {
 
   app.get('/drawn.html', (req,res) =>{
     res.sendFile(__dirname+'/drawn.html');
+    voice_play(4); //5번 파일(사진을 다운받고)
   })
 
 
   app.get('/game_intro.html', (req,res) =>{
     res.sendFile(__dirname+'/game_intro.html');
+    voice_play(5); //6번 파일(알고 싶은)
   })
 
 
   app.get('/game.html', (req,res) =>{
     res.sendFile(__dirname+'/game.html');
+    voice_play(6); //6번 파일(알고 싶은)
   })
 
 
@@ -147,7 +159,10 @@ if (require.main === module) {
     res.sendFile(__dirname+'/finish.html');
   })
   
-  
+  // app.get('/goodbye.html', (req,res) =>{
+  //   res.sendFile(__dirname+'/goodbye.html');
+  //   voice_play(7) //17번파일(반가웠)
+  // })
   // Invoke Main Talker Function
   
 }
