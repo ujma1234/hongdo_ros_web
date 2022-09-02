@@ -18,13 +18,8 @@ const timeout2 = setTimeout(()=> {
     document.getElementById("box2").className = "yes_box";
 }, 16000)
 
-
-timeout;
-
 const fromLeftButton = document.getElementById("box1");
 const fromTopButton = document.getElementById("box2");
-
-
 
 fromLeftButton.addEventListener("click", e=>{
     document.getElementById("ct1").className = "container1_no";

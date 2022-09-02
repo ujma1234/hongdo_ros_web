@@ -189,8 +189,12 @@ body {
           }
 
         .announce {
-            left: 1.7vw;
+            left: 5vw;
+            width: 50vw;
             top: 78vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: absolute;
             z-index: 9;
             font: 6vh/1 "Jua";

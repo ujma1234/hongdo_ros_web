@@ -1,3 +1,9 @@
+var duru_audio = new Audio('audio/effect/duru.mp3');
+duru_audio.muted= true;
+
+
+
+
 const timeout = setTimeout(()=>{
     document.getElementById("real_bg").className = "real_bg";
 },100);
@@ -6,6 +12,8 @@ const timeout1 = setTimeout(()=>{
     document.getElementById("bg").className = "off_real_bg";
 },1100);
 const timeout3 = setTimeout(()=>{
+    duru_audio.play();
+    duru_audio.muted = false;
     document.getElementById("box1").className = "img_box";
     document.getElementById("box2").className = "QR_box";
     document.getElementById("txt1").className = "announce";

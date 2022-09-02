@@ -1,4 +1,12 @@
+
+
+var voice5_audio = new Audio('audio/speech/5.mp3');
+voice5_audio.muted = true;
 const no = document.getElementById("no");
+
+voice5_audio.play();
+voice5_audio.muted=false;
+
 
 no.addEventListener("click", e=>{
     document.getElementById("wrn").className =
