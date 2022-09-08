@@ -192,181 +192,83 @@ body {
 main {
     width: 100%;
     height: 100vh;
-    background: #b1e1e2;
     overflow: hidden;
+    
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        z-index: 1;
+    }
 
-    .off_hong2 {
-        position: absolute;
+    .off_select_btn_box {
         visibility: hidden;
     }
 
-    .hong2 {
-        width: 30vw;
-        height: 50vh;
+    .select_btn_box {
+        right: -10vw;
+        bottom: 2vh;
+        width: 21vw;
+        height: 35vh;
         position: absolute;
-        margin-top: 25vh;
-        margin-left: 10vw;
-        animation: swashIn 1s;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        z-index: 2;
+        overflow: hidden;
+        transform: rotateZ(30deg);
+        animation: btn_appear ease-out 0.5s;
+        animation-fill-mode: forwards;
+
+        @keyframes btn_appear {
+            0%{
+                right: -50vw;
+                bottom: 40vh;
+                transform: rotateZ(30deg);
+            }
+            100%{
+                right: 0vw;
+                bottom: 0vh;
+                transform: rotateZ(0deg);
+            }
         }
-    }
 
-    .intro1 {
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        text-align: center;
-        margin-top: 40vh;
-        font: 20vh/1 "Jua";
-        animation: hidden linear 4s;
-        opacity: 0;
-    }
-
-    .intro2 {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        font: 4vh/1 "Jua";
-        margin-top: 30vh;
-        margin-left: 45vw;
-        animation: text1 linear 8s;
-    }
-
-    .intro3 {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        font: 4vh/1 "Jua";
-        margin-top: 40vh;
-        margin-left: 45vw;
-        animation: text1 linear 10s;
-    }
-
-    .intro4 {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        font: 4vh/1 "Jua";
-        margin-top: 50vh;
-        margin-left: 45vw;
-        animation: text1 linear 12s;
-    }
-
-    .intro5 {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        font: 4vh/1 "Jua";
-        margin-top: 60vh;
-        margin-left: 45vw;
-        animation: text1 linear 14s;
-    }
-
-    .off_text1 {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        font: 4vh/1 "Jua";
-        margin-top: 30vh;
-        margin-left: 45vw;
-    }
-
-    .off_text2 {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        font: 4vh/1 "Jua";
-        margin-top: 40vh;
-        margin-left: 45vw;
-    }
-
-    .off_text3 {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        font: 4vh/1 "Jua";
-        margin-top: 50vh;
-        margin-left: 45vw;
-    }
-
-    .off_text4 {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        font: 4vh/1 "Jua";
-        margin-top: 50vh;
-        margin-left: 66vw;
-        transform: scale(1.4);
-        animation: moving 2s;
-    }
-
-    .off_text1, .off_text2, .off_text3 {
-        opacity: 0;
-        animation: hide linear 2s;
-    }
-
-    .yes_box {
-        position: absolute;
-        width: 15vw;
-        height: 15vh;
-        top: 0px;
-        left: 0px;
-        margin-top: 44vh;
-        margin-left: 70vw;
-        background: rgb(79, 91, 255);
-        border-radius: 5vh;
-        box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 22.3px 17.9px rgba(0, 0, 0, 0.042),
-        0 100px 80px rgba(0, 0, 0, 0.07);
-        animation: swashIn 2s;
-
-        a {
-            text-decoration: none;
+        .no_btn {
+            top: 0vh;
+            left: 3%;
             width: 100%;
-            height: 100%;
-            top: 0px;
-            left: 0px;
-            align-items: center;
-            justify-content: center;
-            display: flex;
-            color: #333;
-            font:6vh/1 "Jua";
+            height: 50%;
+            position: absolute;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+            }
+            .no {
+                position: absolute;
+                top: 63%;
+                left: 37%;
+                font: 4vh "Nanum Brush Script";
+            }
         }
-    }
 
-    .no_box {
-        position: absolute;
-        width: 15vw;
-        height: 15vh;
-        top: 0px;
-        left: 0px;
-        margin-top: 44vh;
-        margin-left: 46vw;
-        background:  rgb(170, 79, 255);
-        border-radius: 5vh;
-        box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 22.3px 17.9px rgba(0, 0, 0, 0.042),
-        0 100px 80px rgba(0, 0, 0, 0.07);
-        cursor: pointer;
-        animation: swashIn 2s;
+        .yes_btn {
+            width: 73%;
+            height: 25%;
+            top: 60%;
+            left: 3.5%;
+            position: absolute;
 
-        a {
-            text-decoration: none;
-            width: 100%;
-            height: 100%;
-            top: 0px;
-            left: 0px;
-            align-items: center;
-            justify-content: center;
-            display: flex;
-            color: #333;
-            font:6vh/1 "Jua";
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+            }
+
+            .yes {
+                position: absolute;
+                top: 24%;
+                left: 56%;
+                font: 4vh "Nanum Brush Script";
+            }
         }
-    }
-
-    .box1, .box2 {
-        visibility: hidden;
     }
 }
 
