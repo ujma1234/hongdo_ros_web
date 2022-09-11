@@ -31,7 +31,6 @@ const path = require('path');
 const fs = require('fs')
 const port = 5000;
 const {exec} = require("child_process");
-const imgbbUploader = require("imgbb-uploader");
 // Requrotires the std_msgs message package
 
 
@@ -79,6 +78,7 @@ if (require.main === module) {
 
   app.get('/index.html', (req,res) =>{
     res.sendFile(__dirname+'/index.html');
+    // voice_play(1); //1번 녹음파일 ~ 2번녹음파일
   })
 
 
@@ -92,6 +92,7 @@ if (require.main === module) {
     })
 
     res.sendFile(__dirname+'/upload.html');
+    // voice_play(2); //3번 녹음파일(사진찍기 ~)
   })
 
   app.get('/taking_pic.html', (req,res) =>{
