@@ -25,5 +25,17 @@ setTimeout(()=>{
 // setTimeout(()=>{
 // },8000);
 
+const _yes = document.getElementById("YES");
+
+const _no = document.getElementById("NO");
+
+_yes.addEventListener("click", e=>{
+    _yes.className = "yes_btn_click";
+
+    setTimeout(()=>{
+        location.replace("select_effect.html")
+    },1000);
+});
+
 
 

@@ -7,239 +7,277 @@ body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: #b1e1e2;
-
-    .container1 {
-        position: absolute;
-        width: 100vw;
-        height: 17vh;
-        top: 0px;
-        left: 0vw;
-        background: rgb(170, 79, 255);
-        animation: moving1 ease-out 2s;
-        animation-fill-mode: forwards;
-        animation-delay: 0.5s;
-    }
-    .container2 {
-        position: absolute;
-        top: 17vh;
-        left: 0vw;
-        width: 100%;
-        height: 17vh;
-        background: rgb(170, 79, 255);
-        animation: moving2 ease-out 2s;
-        animation-fill-mode: forwards;
-        animation-delay: 0.5s;
-    }
-    .container3 {
-        position: absolute;
-        top: 34vh;
-        left: 0vw;
-        width: 100%;
-        height: 17vh;
-        background: rgb(170, 79, 255);
-        animation: moving3 ease-out 2s;
-        animation-fill-mode: forwards;
-        animation-delay: 0.5s;
-    }
-    .container4 {
-        position: absolute;
-        top: 51vh;
-        left: 0vw;
-        width: 100%;
-        height: 17vh;
-        background: rgb(170, 79, 255);
-        animation: moving4 ease-out 2s;
-        animation-fill-mode: forwards;
-        animation-delay: 0.5s;
-    }
-    .container5 {
-        position: absolute;
-        top: 68vh;
-        left: 0vw;
-        width: 100%;
-        height: 17vh;
-        background: rgb(170, 79, 255);
-        animation: moving5 ease-out 2s;
-        animation-fill-mode: forwards;
-        animation-delay: 0.5s;
-    }
-    .container6 {
-        position: absolute;
-        top: 84vh;
-        left: 0vw;
-        width: 100%;
-        height: 20vh;
-        background: rgb(170, 79, 255);
-        animation: moving6 ease-out 2s;
-        animation-fill-mode: forwards;
-        animation-delay: 0.5s;
-    }
-
-    @keyframes moving1 {
-        0% {left: 0px};
-        10% {left: 0px};
-        50% {left: -100vw};
-        100% {left: -100vw};
-    }
-    @keyframes moving2 {
-        0% {left: 0px};
-        20% {left: 0px};
-        60% {left: -100vw};
-        100% {left: -100vw};
-    }
-    @keyframes moving3 {
-        0% {left: 0px};
-        30% {left: 0px};
-        70% {left: -100vw};
-        100% {left: -100vw};
-    }
-    @keyframes moving4 {
-        0% {left: 0px};
-        40% {left: 0px};
-        80% {left: -100vw};
-        100% {left: -100vw};
-    }
-    @keyframes moving5 {
-        0% {left: 0px};
-        50% {left: 0px};
-        90% {left: -100vw};
-        100% {left: -100vw};
-    }
-    @keyframes moving6{
-        0% {left: 0px};
-        60% {left: 0px};
-        100% {left: -100vw};
-    }
     
     main {
         width: 100%;
         height: 100%;
 
-        .off_hong2 {
-            visibility: hidden;
+        .bg {
+          width: 100%;
+          height: 100%;
+          left: 0px;
+          top: 0px;
+          position: absolute;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+          }
         }
-        
-        .hong2 {
+
+        .deco1 {
+          width: 50vw;
+          height: 100vh;
+          top: 0px;
+          left: -10vw;
+          position: absolute;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+
+        .deco2 {
+          width: 50vw;
+          height: 100vh;
+          top: 0px;
+          left: 60vw;
+          position: absolute;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+
+        .camera_btn {
+          width: 28vw;
+          height: 30vh;
+          top: 34vh;
+          left: 35vw;
+          position: absolute;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+
+          .txt {
+            width: 100%;
+            height: 100%;
             position: absolute;
-            width: 30vh;
-            height: 40vh;
-            top: 0px;
-            margin-top: 30vh;
-            left: 50vw;
-            margin-left: -20vh;
-            transform: scale(1.4);
-            opacity: 1;
-            animation: hong2 linear 2s;
-            animation-fill-mode: forwards;
-
-            img {
-              width: 100%;
-              height: 100%;
-              object-fit: contain;
-            }
-        }
-
-        @keyframes hong2 {
-            0% {opacity: 0;};
-            50% {opacity: 1; transform: scale(1.2); margin-left: -20vh;}
-            100% {margin-left: -60vh; transform: scale(1.2);}
-        }
-
-        .text {
-            position: absolute;
-            top: 83vh;
-            width: 100vw;
-            text-align: center;
-            font: 7vh/1 "Jua";
-            color: #444;
-            opacity: 0.8;
-            animation: text linear 1s;
-            z-index: 10;
-        }
-
-        .anounce {
-            top: 10vh;
-            left: 50%;
-            margin-left: -35vh;
-            position: absolute;
-            font: 7vh/1 "Jua";
-            color: rgb(181, 85, 125);
-            opacity: 0.8;
-            z-index: 10;
-            animation: bounce 1.2s infinite;
-        }
-
-        @keyframes bounce {
-            0%{opacity: 1;}
-            100%{opacity: 0;}
-        }
-
-        .off_text {
-            visibility: hidden;
-        }
-
-        @keyframes text {
-            0% {opacity: 0;}
-            100% {opacity: 0.8;}
-        }
-        .off_btn {
-            visibility: hidden;
-        }
-
-        .btn {
-            top: 0px;
-            left: 20vh;
-            margin-top: 42.5vh;
-            margin-left: 50vw;
-            position: absolute;
-            width: 40vh;
-            height: 15vh;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 5vh;
-            animation: boingInUp 1s;
-            font: 5vh "Jua";
-            align-items: center;
-            justify-content: center;
             display: flex;
-            z-index: 1;
+            justify-content: center;
+            align-items: center;
+            font: 7vh "Nanum Brush Script";
+            top: 2vh;
+            left: 1vw;
+          }
         }
 
-        .display {
-            z-index: 2;
-            top: 0px;
-            left: 20vh;
-            margin-top: 42.5vh;
-            margin-left: 50vw;
-            position: absolute;
-            width: 40vh;
-            height: 15vh;
-            background: rgb(255, 255, 255 );
-            animation: display_1 linear 1s;
-            animation-fill-mode: forwards;
+        .off_duru {
+          visibility: hidden;
+        }
 
-            .myVideo {
+        .duru {
+          width: 44vw;
+          height: 95vh;
+          left: 28vw;
+          top: 0vh;
+          position: absolute;
+          overflow: hidden;
+
+          .duru2 {
               width: 100%;
-              height: 100%;
+              top: 0px;
+              height: 103%;
               position: absolute;
-              top: 0;
-              left: 0;
-              object-fit: fill;
-            }
+              overflow: hidden;
+              z-index: 2;
+
+              img {
+                  width: 44vw;
+                  height: 99vh;
+                  object-fit: cover;
+              }
+          }
+
+          .duru1 {
+              width: 100%;
+              height: 5vh;
+              top: 0vh;
+              left: 0%;
+              position: absolute;
+              z-index: 3;
+              animation: duru1_move linear 1s;
+              animation-fill-mode: forwards;
+              filter: blur(0.5vh);
+
+              @keyframes duru1_move {
+                  0% {top: 0vh;}
+                  100% {top:90vh;filter: blur(0.0vh);}
+              }
+
+              img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: fill;
+              }
+          }
+
+          .bg3 {
+              width: 100%;
+              height: 95vh;
+              top: 5vh;
+              left: 0%;
+              position: absolute;
+              z-index: 3;
+              animation: duru3_move linear 1s;
+              animation-fill-mode: forwards;
+              overflow: hidden;
+
+              .img_bg {
+                  width: 100vw;
+                  height: 100vh;
+                  top: -5vh;
+                  left: -28vw;
+                  position: absolute;
+                  object-fit: fill;
+                  animation: bg_move linear 1s;
+                  animation-fill-mode: forwards;
+              }
+
+              @keyframes bg_move {
+                  0% {
+                      top: -5vh;
+                      left: -28vw;
+                  }
+                  100% {
+                      top: -95vh;
+                      left: -28vw;
+                  }
+              }
+
+              @keyframes duru3_move {
+                  0% {
+                      top: 5vh;
+                      height: 95vh;
+                  }
+                  100% {
+                      top:95vh;
+                      height: 0vh;
+                  }
+              }
+          }
+      }
+
+      .announce_1 {
+        width: 40vw;
+        height: 14vh;
+        opacity: 0.9;
+        left: 30vw;
+        top: 75vh;
+        position: absolute;
+        z-index: 5;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
         }
 
-        .off_display {
-            visibility: hidden;
+        .txt1 {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font: 6.2vh "Nanum Brush Script";
+          position: absolute;
+          top: -0.5vh;
+          left: 0px;
+          color: #fff;
+        }
+      }
+
+      .off_announce_2 {
+        visibility: hidden;
+      }
+
+      .announce_2 {
+        width: 60vw;
+        height: 12vh;
+        left: 20vw;
+        top: 75vh;
+        position: absolute;
+        z-index: 5;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
         }
 
-        @keyframes display_1 {
-            0% {width: 40vh;};
-            30% {left:40vh;width: 1px;height: 15vh; margin-top: 42.5vh};
-            31%{left:40vh; height: 80vh; margin-top: 10vh;width: 1px;}
-            100% {left:40vh; height: 80vh; margin-top: 10vh; width: 90vh; left: 5vh;
-            border: 1vh solid black;
-            }
+        .txt2 {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font: 5vh "Nanum Brush Script";
+          position: absolute;
+          top: -0.5vh;
+          left: 0px;
+          color: #fff;
         }
+      }
+
+      
+
+
+
+
+
+        // .display {
+        //     z-index: 2;
+        //     top: 0px;
+        //     left: 20vh;
+        //     margin-top: 42.5vh;
+        //     margin-left: 50vw;
+        //     position: absolute;
+        //     width: 40vh;
+        //     height: 15vh;
+        //     background: rgb(255, 255, 255 );
+        //     animation: display_1 linear 1s;
+        //     animation-fill-mode: forwards;
+
+        //     .myVideo {
+        //       width: 100%;
+        //       height: 100%;
+        //       position: absolute;
+        //       top: 0;
+        //       left: 0;
+        //       object-fit: fill;
+        //     }
+        // }
+
+        // .off_display {
+        //     visibility: hidden;
+        // }
+
+        // @keyframes display_1 {
+        //     0% {width: 40vh;};
+        //     30% {left:40vh;width: 1px;height: 15vh; margin-top: 42.5vh};
+        //     31%{left:40vh; height: 80vh; margin-top: 10vh;width: 1px;}
+        //     100% {left:40vh; height: 80vh; margin-top: 10vh; width: 90vh; left: 5vh;
+        //     border: 1vh solid black;
+        //     }
+        // }
 
         @keyframes boingInUp {
             0% {

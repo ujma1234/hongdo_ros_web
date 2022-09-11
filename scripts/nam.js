@@ -113,6 +113,10 @@ if (require.main === module) {
     res.sendFile(__dirname+'/index.html');
   })
 
+  app.get('/select_effect.html', (req,res) =>{
+    res.sendFile(__dirname+'/select_effect.html');
+  })
+
 
   app.get('/upload.html', (req,res) =>{
     // talker_service();
