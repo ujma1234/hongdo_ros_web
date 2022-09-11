@@ -34,7 +34,7 @@ const {exec} = require("child_process");
 // Requrotires the std_msgs message package
 
 
-rosnodejs.initNode('/hongdo_ros_web_node')
+rosnodejs.initNode('/hongdo_ros_web_node');
 const nh = rosnodejs.nh;
 
 function sound_play(number) {
