@@ -1,6 +1,25 @@
+const C_btn = document.querySelector(".camera_btn");
 
+C_btn.addEventListener("click", e=>{
+  C_btn.className = "camera_btn_click";
 
+  setTimeout(()=>{
+    document.querySelector(".off_duru").className = "duru";
+    document.querySelector(".announce_1").className = "off_announce_1";
+  },500);
 
+  setTimeout(()=>{
+    document.querySelector(".off_announce_2").className = "announce_2";
+  },1500);
+
+  setTimeout(()=>{
+    document.querySelector(".dem").className = "demo";
+  },4000);
+
+  setTimeout(()=>{
+    location.replace("taking_pic.html");
+  }, 7000);
+});
 
 var myVideoStream = document.getElementById('myVideo')     // make it a global variable
   var myStoredInterval = 0
