@@ -68,6 +68,7 @@ body main .deco2 img {
   height: 100%;
   object-fit: contain;
 }
+@keyframes deco_move {}
 body main .camera_btn {
   width: 28vw;
   height: 30vh;
@@ -203,7 +204,7 @@ body main .announce_1 .txt1 {
   align-items: center;
   font: 6.2vh "Nanum Brush Script";
   position: absolute;
-  top: -0.5vh;
+  top: -1.3vh;
   left: 0px;
   color: #fff;
 }
