@@ -17,25 +17,25 @@ from deblue import deblue
 from quicksort import *
 
 # args
-input_path = './input/model_small.png'
-output_path = './output' 
+input_path = '../input/model.png'
+output_path = '../output' 
 
 np.random.seed(1)
 n =  10                 # Quantization order
-period = 5              # line period
+period = 4              # line period
 direction =  10         # num of dir
-Freq = 100              # save every（freq) lines drawn
+Freq = 1000              # save every（freq) lines drawn
 deepen =  1             # for edge
 transTone = False       # for Tone8
 kernel_radius = 3       # for ETF
 iter_time = 15          # for ETF
-background_dir = None     # for ETF 
+background_dir = 45     # for ETF 
 CLAHE = True
 edge_CLAHE = True
 draw_new = True
 random_order = False
 ETF_order = True
-process_visible = True
+process_visible = False
 
 if __name__ == '__main__': 
   
@@ -273,7 +273,7 @@ if __name__ == '__main__':
                 #     now,_ = rotate(canvas[2*period:2*period+h,2*period:2*period+w], angle)
                 #     (H,W) = now.shape
                 #     now = now[int((H-h0)/2):int((H-h0)/2)+h0, int((W-w0)/2):int((W-w0)/2)+w0]
-                
+                # pass
                 cv2.imwrite(output_path + "/process/{0:04d}.jpg".format(int(step/Freq)), result)
                 # cv2.imshow('step', canvas)
                 # cv2.waitKey(0)  
@@ -303,7 +303,7 @@ if __name__ == '__main__':
         edge = HistogramEqualization(edge)
 
     cv2.imwrite(output_path + '/edge.jpg', edge)
-    cv2.imshow("edge",edge)
+    # cv2.imshow("edge",edge)
 
 
     ############# merge #############
@@ -319,7 +319,7 @@ if __name__ == '__main__':
 
     cv2.imwrite(output_path + '/result.jpg', result)
     # cv2.imwrite(output_path + "/process/{0:04d}.png".format(step+1), result)
-    cv2.imshow("result",result)
+    # cv2.imshow("result",result)
 
     
     # deblue
@@ -332,8 +332,9 @@ if __name__ == '__main__':
     img_yuv[:,:,0] = result
     img_rgb = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR) 
 
-    cv2.imshow("RGB",img_rgb)
-    cv2.waitKey(0)
-    cv2.imwrite(output_path + "/result_RGB.jpg",img_rgb)
+    # cv2.imshow("RGB",img_rgb)
+    # cv2.waitKey(0)
+    cv2.imwrite(output_path + "/result_RGB.jpg",img_rgb) ##/result_RGB.jpg
+    cv2.imwrite("../output/trained_model.png",img_rgb)
 
     

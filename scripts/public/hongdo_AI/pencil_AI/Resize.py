@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
 
-input_path = './transform/model.jpg'
-output_path = './input' 
+input_path = '../input/model.png'
+output_path = '../input' 
 
 min_length = 480
 img = cv2.imread(input_path, cv2.IMREAD_COLOR)
@@ -12,7 +12,7 @@ if h<w:
 else:
     img = cv2.resize(img,(min_length,int(min_length*h/w)))
 
-cv2.imwrite(output_path + "/up.png", img)
-cv2.imshow('draw', img)
+cv2.imwrite(output_path + "/model.png", img)
+# cv2.imshow('draw', img)
 cv2.waitKey(0) 
 
