@@ -3,410 +3,195 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
-$base-duration: 500ms;
 
-// Colors
-$color-1: #2c3e50;
-$color-2: #3498db;
-$color-3: #2ecc71;
-
-// Breakpoints
-$sm: new-breakpoint(min-width 320px);
-$med: new-breakpoint(min-width 768px);
-$lg: new-breakpoint(min-width 1024px);
 body {
-    position: absolute;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  main {
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background:  #b1e1e2;
+    height: 100%;
 
-    main {
-        width: 100%;
-        height: 100%;
+    .bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      img {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
+      }
+    }
 
-        .img_box {
-            width: 50vw;
-            height: 10vh;
-            top: 0vh;
-            left: 0vw;
-            margin-top: 10vh;
-            margin-left: 5vw;
-            animation: slideUpReturn 1s;
-            animation-fill-mode: forwards;
+    .duru {
+      width: 44vw;
+      height: 95vh;
+      left: 8vw;
+      top: 0vh;
+      position: absolute;
+      overflow: hidden;
 
-            @keyframes slideUpReturn {
-                0% {
-                  -webkit-transform-origin: 0 0;
-                  transform-origin: 0 0;
-                  -webkit-transform: translateY(-100%);
-                  transform: translateY(-100%);
-                }
-              
-                100% {
-                  -webkit-transform-origin: 0 0;
-                  transform-origin: 0 0;
-                  -webkit-transform: translateY(0%);
-                  transform: translateY(0%);
-                }
-              }
+      .duru2 {
+          width: 100%;
+          top: 0px;
+          height: 103%;
+          position: absolute;
+          overflow: hidden;
+          z-index: 3;
 
-            .duru1 {
-                position: relative;
-                width: 100%;
-                height: 5vh;
+          img {
+              width: 44vw;
+              height: 99vh;
+              object-fit: cover;
+          }
+      }
 
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: fill;
-                }
-            }
+      .duru1 {
+          width: 100%;
+          height: 5vh;
+          top: 0vh;
+          left: 0%;
+          position: absolute;
+          z-index: 4;
+          animation: duru1_move linear 1s;
+          animation-fill-mode: forwards;
+          filter: blur(0.5vh);
 
-            .img_b {
-                position: relative;
-                width: 90%;
-                left: 5%;
-                height: 1px;
-                background: #fff;
-                animation: down_box ease-out 1.5s;
-                animation-fill-mode: forwards;
-                animation-delay: 1.2s;
+          @keyframes duru1_move {
+              0% {top: 0vh;}
+              100% {top:90vh;filter: blur(0.0vh);}
+          }
 
-                .hi {
-                  position: absolute;
-                  width: 80%;
-                  height: 80%;
-                  top: 5%;
-                  left: 10%;
-                  object-fit: contain;
-                }
-
-                .duru_bg {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: fill;
-                }
-            }
-
-            @keyframes down_box {
-                0%{height: 1px};
-                100%{height: 70vh};
-            }
-
-            .duru2 {
-                position: absolute;
-                width: 100%;
-                height: 5vh;
-                top: 5vh;
-                animation: down ease-out 1.5s;
-                animation-delay: 1.2s;
-                animation-fill-mode: forwards;
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: fill;
-                }
-            }
-
-            @keyframes down {
-                0%{top: 5vh;};
-                100%{top: 75vh;};
-            }
-        }
-
-        .QR_box {
-            position: absolute;
-            width: 15vw;
-            height: 15vw;
-            top: 20vh;
-            left: 70vw;
-            opacity: 0;
-            animation: vanishIn 1s;
-            animation-delay: 2.7s;
-            animation-fill-mode: forwards;
-
-            img {
+          img {
               width: 100%;
               height: 100%;
-              top: 0;
-              left: 0;
+              object-fit: fill;
+          }
+      }
+
+      .bg3 {
+          width: 100%;
+          height: 95vh;
+          top: 5vh;
+          left: 0%;
+          position: absolute;
+          z-index: 4;
+          animation: duru3_move linear 1s;
+          animation-fill-mode: forwards;
+          overflow: hidden;
+
+          .img_bg {
+              width: 100vw;
+              height: 100vh;
+              top: -5vh;
+              left: -8vw;
               position: absolute;
-              object-fit: contain;
-            }
-        }
-
-        @keyframes vanishIn {
-            0% {
-              opacity: 0;
-              transform-origin: 50% 50%;
-              transform: scale(2, 2);
-              filter: blur(90px);
-            }
-            100% {
-              opacity: 1;
-              transform-origin: 50% 50%;
-              transform: scale(1, 1);
-              filter: blur(0px);
-            }
+              object-fit: fill;
+              animation: bg_move linear 1s;
+              animation-fill-mode: forwards;
           }
 
-        .text {
-            top: 75vh;
-            left: 70vw;
-            position: absolute;
-            font: 10vh "Jua";
-            cursor: pointer;
-            animation: tinRightIn 1s;
-            animation-delay: 4s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes tinRightIn {
-            0% {
-              opacity: 0;
-              -webkit-transform: scale(1, 1) translateX(900%);
-              transform: scale(1, 1) translateX(900%);
-            }
-          
-            50%,
-            70%,
-            90% {
-              opacity: 1;
-              -webkit-transform: scale(1.1, 1.1) translateX(0);
-              transform: scale(1.1, 1.1) translateX(0);
-            }
-          
-            60%,
-            80%,
-            100% {
-              opacity: 1;
-              -webkit-transform: scale(1, 1) translateX(0);
-              transform: scale(1, 1) translateX(0);
-            }
+          @keyframes bg_move {
+              0% {
+                  top: -5vh;
+                  left: -8vw;
+              }
+              100% {
+                  top: -95vh;
+                  left: -8vw;
+              }
           }
 
-        .announce {
-            left: 5vw;
-            width: 50vw;
-            top: 78vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            z-index: 9;
-            font: 6vh/1 "Jua";
-            color: #444;
-            opacity: 0;
-            animation: vanishIn 1s;
-            animation-delay: 2.7s;
-            animation-fill-mode: forwards;
-        }
-
-        .bye_txt {
-            top: 75vh;
-            left: 70vw;
-            position: absolute;
-            font: 10vh "Jua";
-            cursor: pointer;
-            animation: tinLeftOut 1s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes tinLeftOut {
-            0%,
-            20%,
-            40%,
-            50% {
-              opacity: 1;
-              -webkit-transform: scale(1, 1) translateX(0);
-              transform: scale(1, 1) translateX(0);
-            }
-          
-            10%,
-            30% {
-              opacity: 1;
-              -webkit-transform: scale(1.1, 1.1) translateX(0);
-              transform: scale(1.1, 1.1) translateX(0);
-            }
-          
-            100% {
-              opacity: 0;
-              -webkit-transform: scale(1, 1) translateX(-900%);
-              transform: scale(1, 1) translateX(-900%);
-            }
+          @keyframes duru3_move {
+              0% {
+                  top: 5vh;
+                  height: 95vh;
+              }
+              100% {
+                  top:95vh;
+                  height: 0vh;
+              }
           }
-
-        .off_box1, .off_box2, .off_txt1, .off_txt2 {
-            visibility: hidden;
-            // img_box QR_box announce text
-        }
-
-        .button {
-            z-index: 9;
-            left: 30vw;
-            top: 40vh;
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            width: 40vw;
-            height: 20vh;
-            background-color: $color-2;
-            border: none;
-            border-radius: 0.3125rem; 
-            box-shadow: 0 12px 24px 0 rgba(0,0,0,0.2);
-            
-            color: white;
-            font-weight: 300;
-            text-transform: uppercase;
-            //transition: $base-duration ease;
-            overflow: hidden; 
-  
-            &:before {
-            position: absolute;
-            content: '';
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background-color: lighten($color-3,10%);
-            }
-  
-            span {
-                position: absolute;
-                line-height: 0;
-    
-                i {
-                transform-origin: center center;
-                }
-
-                &:nth-of-type(1) {
-                top: 50%;
-                transform: translateY(-50%) scale(2);
-                }
-    
-                &:nth-of-type(2) {
-                top: 100%;
-                transform: translateY(50%) scale(2);;
-                font-size: 24px;
-                }
-    
-                &:nth-of-type(3) {
-                display: none;
-                }
-            }
-        }
-        .active {
-            z-index: 9;
-            background-color: $color-3;
-            
-            &:before {
-              width: 100%;
-              transition: width 3s linear;
-            }
-          
-            span {
-              
-              &:nth-of-type(1) {
-                top: -100%;
-                transform: translateY(-50%) scale(2); 
-              }
-          
-              &:nth-of-type(2) {
-                top: 50%;
-                transform: translateY(-50%) scale(2);
-          
-                i {
-                  animation: loading $base-duration linear infinite;
-                }
-              }
-              
-              &:nth-of-type(3) {
-                display: none;
-              }
-            }
-          }
-          
-        .finished {
-            z-index: 9;
-            background-color: lighten($color-3,10%);
-            
-            .submit {
-              display: none; 
-            }
-            
-            .loading {
-              display: none;
-            }
-            
-            .check {
-              display: block !important;
-              font-size: 24px;
-              transform: scale(2);
-              animation: scale 0.5s linear;
-              
-              i {
-                transform-origin: center center;
-              }
-            }
-            
-        }
-
-        .hide {
-            visibility: hidden;
-        }
-          
-        @keyframes loading {
-            100% { transform: rotate(360deg); }
-        }
-          
-        @keyframes scale {
-            0%   { transform: scale(10); }
-            50%  { transform: scale(0.2); }
-            70%  { transform: scale(1.2); }
-            90%  { transform: scale(0.7); }
-            100% { transform: scale(1); }
-        }
-
-        .bg {
-            position: absolute;
-            z-index: 8;
-            width: 100%;
-            height: 100vh;
-            background: rgb(79, 91, 255);
-            top: 0px;
-        }
-
-        .real_bg {
-            position: absolute;
-            z-index: 10;
-            width: 100%;
-            height: 100vh;
-            background: #b1e1e2;
-            top: 0px;
-            opacity: 0;
-            animation: vanishIn 1s;
-            animation-fill-mode: forwards;
-        }
-
-        .off_real_bg {
-            visibility: hidden;
-        }
-
-        .bye_bg {
-                position: absolute;
-                z-index: 10;
-                width: 100%;
-                height: 100vh;
-                background: rgb(79, 91, 255);
-                top: 0px;
-                animation: vanishIn 2s;
-                animation-fill-mode: forwards;
-        }
+      }
     }
+
+    .QR {
+      width: 26vw;
+      height: 26vw;
+      left: 62vw;
+      top: 35vh;
+      position: absolute;
+      background: #fff;
+      opacity: 0;
+      animation: fadein 0.5s linear;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .text {
+      width: 30vw;
+      height: 12vh;
+      top: 18vh;
+      left: 60vw;
+      position: absolute;
+      opacity: 0;
+      animation: fadein 0.5s linear;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+
+      img {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
+          filter: contrast(0%);
+      }
+
+      .txt {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: -8%;
+          left: 0%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font: 5vh "Nanum Brush Script";
+          color: #fff;
+      }
+    }
+
+    .next_btn {
+      width: 5vw;
+      height: 10vh;
+      top: 80vh;
+      left: 91vw;
+      position: absolute;
+      animation: fadein 0.5s linear;
+      opacity: 0;
+      animation-fill-mode: forwards;
+      animation-delay: 2s;
+
+      img {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
+          filter: drop-shadow(2px 2px 2vh rgba(0,0,0,0.8));
+      }
+    }
+  }
+}
+
+@keyframes fadein {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
