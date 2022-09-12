@@ -1,8 +1,15 @@
 import cv2
 import numpy as np
+import os
 
-input_path = '../input/model.png'
-output_path = '../input' 
+class fileRoot(object):
+    file_abspath = os.path.abspath(__file__)
+    dirpath = os.path.dirname(file_abspath)
+    pr_dirpath = os.path.dirname(dirpath)
+
+
+input_path = fileRoot.pr_dirpath + '/input/model.png'
+output_path = fileRoot.pr_dirpath + '/input' 
 
 min_length = 480
 img = cv2.imread(input_path, cv2.IMREAD_COLOR)
