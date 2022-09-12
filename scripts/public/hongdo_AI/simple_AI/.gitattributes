@@ -1,12 +1,1 @@
-create_set_rule.sh filter=lfs diff=lfs merge=lfs -text
-hi.png filter=lfs diff=lfs merge=lfs -text
-vision.py filter=lfs diff=lfs merge=lfs -text
-AIimage.png filter=lfs diff=lfs merge=lfs -text
-colab_requirements.txt filter=lfs diff=lfs merge=lfs -text
 ArtLine_650.pkl filter=lfs diff=lfs merge=lfs -text
-LICENSE filter=lfs diff=lfs merge=lfs -text
-Model filter=lfs diff=lfs merge=lfs -text
-model.jpg filter=lfs diff=lfs merge=lfs -text
-README.md filter=lfs diff=lfs merge=lfs -text
-=8.0.0 filter=lfs diff=lfs merge=lfs -text
-anchors.webp filter=lfs diff=lfs merge=lfs -text
