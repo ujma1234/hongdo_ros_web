@@ -30,12 +30,12 @@ body {
       height: 5vh;
       position: absolute;
       top: 30vh;
-      left: 45vw;
+      left: 43vw;
       font: 5vh "Nanum Brush Script";
 
       span {
         position: relative;
-        animation: anime_textup 1.6s infinite;
+        animation: anime_textup 2s infinite;
       }
 
       :nth-of-type(1) {
@@ -61,6 +61,12 @@ body {
       }
       :nth-of-type(8) {
         animation-delay: 1.6s;
+      }
+      :nth-of-type(9) {
+        animation-delay: 1.8s;
+      }
+      :nth-of-type(10) {
+        animation-delay: 2s;
       }
     }
 

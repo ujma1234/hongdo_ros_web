@@ -49,12 +49,12 @@ body main .txt {
   height: 5vh;
   position: absolute;
   top: 30vh;
-  left: 45vw;
+  left: 43vw;
   font: 5vh "Nanum Brush Script";
 }
 body main .txt span {
   position: relative;
-  animation: anime_textup 1.6s infinite;
+  animation: anime_textup 2s infinite;
 }
 body main .txt :nth-of-type(1) {
   animation-delay: 0.2s;
@@ -79,6 +79,12 @@ body main .txt :nth-of-type(7) {
 }
 body main .txt :nth-of-type(8) {
   animation-delay: 1.6s;
+}
+body main .txt :nth-of-type(9) {
+  animation-delay: 1.8s;
+}
+body main .txt :nth-of-type(10) {
+  animation-delay: 2s;
 }
 @keyframes anime_textup {
   0% {
@@ -107,4 +113,4 @@ body main .drawing img {
   object-fit: contain;
 }
 
-/*# sourceMappingURL=loading_style.css.map */
+/*# sourceMappingURL=QR_make_style.css.map */

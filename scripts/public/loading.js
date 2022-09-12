@@ -1,6 +1,3 @@
-const timeout = setTimeout(()=>{
-    location.replace("QR_make.html");
-}, 10000);
 
 const btn_home = document.getElementById("btn_home");
 
