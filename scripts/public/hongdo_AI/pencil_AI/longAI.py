@@ -16,9 +16,16 @@ from ETF.edge_tangent_flow import *
 from deblue import deblue
 from quicksort import *
 
+
+class fileRoot(object):
+    file_abspath = os.path.abspath(__file__)
+    dirpath = os.path.dirname(file_abspath)
+    pr_dirpath = os.path.dirname(dirpath)
+
+
 # args
-input_path = '../input/model.png'
-output_path = '../output' 
+input_path = fileRoot.pr_dirpath + '/input/model.png'
+output_path = fileRoot.pr_dirpath + '/output' 
 
 np.random.seed(1)
 n =  10                 # Quantization order
