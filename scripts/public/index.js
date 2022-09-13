@@ -33,7 +33,7 @@ _yes.addEventListener("click", e=>{
     _yes.className = "yes_btn_click";
 
     setTimeout(()=>{
-        location.replace("select_effect.html")
+        location.replace("upload.html")
     },1000);
 });
 

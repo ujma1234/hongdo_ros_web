@@ -90,5 +90,5 @@ s4.addEventListener("click", e=>{
 });
 
 btn.addEventListener("click", e=>{
-    location.replace("upload.html")
+    location.replace("loading.html")
 });

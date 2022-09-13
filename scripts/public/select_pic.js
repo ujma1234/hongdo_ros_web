@@ -14,7 +14,7 @@ const yes = document.getElementById("YES");
 const no = document.getElementById("NO");
 
 yes.addEventListener("click", e=>{
-    location.replace("loading.html");
+    location.replace("select_effect.html");
 });
 
 no.addEventListener("click", e=>{
