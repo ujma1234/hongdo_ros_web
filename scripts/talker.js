@@ -75,6 +75,9 @@ if (require.main === module) {
     console.log(__dirname+'')
   })
 
+  app.get('/select_effect.html', (req,res) =>{
+    res.sendFile(__dirname+'/select_effect.html');
+  })
 
   app.get('/index.html', (req,res) =>{
     res.sendFile(__dirname+'/index.html');
