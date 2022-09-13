@@ -86,10 +86,10 @@ if (require.main === module) {
     // talker();
 
     // delete saved image
-    exec(`cd /home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads && rm -f model.jpg && rm -f hi.png && rm -f AIimage.png`,async(err, stdout, stderr) => {
-      if(err) console.error(err)
-      console.log(stdout)
-    })
+    // exec(`cd /home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/hongdo_AI/simple_AI/output && rm -f model.jpg && rm -f hi.png && rm -f AIimage.png`,async(err, stdout, stderr) => {
+    //   if(err) console.error(err)
+    //   console.log(stdout)
+    // })
 
     res.sendFile(__dirname+'/upload.html');
     // voice_play(2); //3번 녹음파일(사진찍기 ~)
@@ -98,7 +98,7 @@ if (require.main === module) {
   app.get('/taking_pic.html', (req,res) =>{
     res.sendFile(__dirname+'/taking_pic.html');
     opnecv_capture();
-    //사진 저장 후 경로 public/img/uploads  파일명 : model.jpg 
+    //사진 저장 후 경로 public/hongdo_AI/input  파일명 : model.jpg 
   })
 
 
@@ -111,16 +111,34 @@ if (require.main === module) {
   app.get('/loading.html', (req,res) =>{
     // handshake_service();
     // drawing motion 
-    exec(`cd /home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads && python3 vision.py`,async(err, stdout, stderr) => {
+
+
+    // exec('cd' +__dirname + '/hongdo_AI/simple_AI && python3 vision.py',async(err, stdout, stderr) => {
+    //   if(err) console.error(err)
+    //   console.log(stdout)
+    // })
+    // simple AI
+
+
+    exec('cd' +__dirname + '/hongdo_AI/pencil_AI && ./startAI.sh',async(err, stdout, stderr) => {
       if(err) console.error(err)
       console.log(stdout)
     })
+    // pecil AI
+
+
+
+    
+    // exec('cd' +__dirname + '/hongdo_AI/pencil_AI && ./startAI.sh',async(err, stdout, stderr) => {
+    //   if(err) console.error(err)
+    //   console.log(stdout)
+    // })
 
     res.sendFile(__dirname+'/loading.html');
   })
 
   app.get('/QR_make.html', (req,res) => {
-    imgbbUploader("e4422a3845100fe670775736ffd0e7cb", '/home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads/hi.png'). then((response)=>
+    imgbbUploader("e4422a3845100fe670775736ffd0e7cb", __dirname +'/hongdo_AI/output/trained_model.png'). then((response)=>
       url_service(JSON.stringify(response.url))
     )
     .catch((error) => 
