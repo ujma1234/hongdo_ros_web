@@ -31,6 +31,8 @@ const path = require('path');
 const fs = require('fs')
 const port = 5000;
 const {exec} = require("child_process");
+const { url } = require('inspector');
+const { response } = require('express');
 // Requrotires the std_msgs message package
 
 
@@ -53,7 +55,7 @@ function handshake_service() {
 }
 
 function url_service(urlstring) {
-  const client = nh.serviceClient('/make_qr', 'hongdo_ros_speak/UrlTunnel');
+  const client = nh.serviceClient('/make_qr', 'hongdo_ros_webconnect/UrlTunnel');
   client.call({url : urlstring})
 }
 
@@ -116,17 +118,17 @@ if (require.main === module) {
     // drawing motion 
 
 
-    // exec('cd' +__dirname + '/hongdo_AI/simple_AI && python3 vision.py',async(err, stdout, stderr) => {
-    //   if(err) console.error(err)
-    //   console.log(stdout)
-    // })
-    // simple AI
-
-
-    exec('cd' +__dirname + '/hongdo_AI/pencil_AI && ./startAI.sh',async(err, stdout, stderr) => {
+    exec('cd ' +__dirname + '/public/hongdo_AI/simple_AI && python3 vision.py',async(err, stdout, stderr) => {
       if(err) console.error(err)
       console.log(stdout)
     })
+    // simple AI
+
+
+    // exec('cd ' +__dirname + '/public/hongdo_AI/pencil_AI && ./startAI.sh',async(err, stdout, stderr) => {
+    //   if(err) console.error(err)
+    //   console.log(stdout)
+    // })
     // pecil AI
 
 
@@ -141,8 +143,8 @@ if (require.main === module) {
   })
 
   app.get('/QR_make.html', (req,res) => {
-    imgbbUploader("e4422a3845100fe670775736ffd0e7cb", __dirname +'/hongdo_AI/output/trained_model.png'). then((response)=>
-      url_service(JSON.stringify(response.url))
+    imgbbUploader("e4422a3845100fe670775736ffd0e7cb", __dirname +'/public/hongdo_AI/output/trained_model.png'). then((response)=>
+      url_service(JSON.stringify(response.url)[1,-2])
     )
     .catch((error) => 
       console.error(error)
