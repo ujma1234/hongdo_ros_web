@@ -1,6 +1,6 @@
 setTimeout(()=>{
     location.replace("QR_make.html");
-},1000);
+},2000);
 
 const btn_home = document.getElementById("btn_home");
 
