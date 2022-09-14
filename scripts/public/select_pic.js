@@ -1,3 +1,7 @@
+var voice = new Audio("audio/speech/3.mp3")
+
+voice.play();
+
 setTimeout(()=>{
     document.querySelector(".off_duru").className = "duru";
 },1000);
@@ -14,7 +18,7 @@ const yes = document.getElementById("YES");
 const no = document.getElementById("NO");
 
 yes.addEventListener("click", e=>{
-    location.replace("select_effect.html");
+    location.replace("loading.html");
 });
 
 no.addEventListener("click", e=>{

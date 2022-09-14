@@ -1,5 +1,7 @@
-var duru_audio = new Audio('audio/effect/duru.mp3');
-duru_audio.muted= true;
+var voice = new Audio("audio/speech/4.mp3")
+voice.currentTime = 3;
+
+voice.play();
 
 const btn_home = document.getElementById("btn_home");
 

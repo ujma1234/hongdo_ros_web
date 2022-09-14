@@ -1,5 +1,8 @@
 const C_btn = document.querySelector(".camera_btn");
+var voice = new Audio("audio/speech/2.mp3")
+voice.currentTime = 4;
 
+voice.play();
 C_btn.addEventListener("click", e=>{
   C_btn.className = "camera_btn_click";
 
