@@ -34,11 +34,27 @@ main {
   height: 100vh;
   overflow: hidden;
 }
-main video {
+main .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+main .bg img {
   width: 100%;
   height: 100%;
   object-fit: fill;
-  z-index: 1;
+}
+main video {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  object-fit: fill;
+  z-index: 2;
 }
 main .off_select_btn_box {
   visibility: hidden;
