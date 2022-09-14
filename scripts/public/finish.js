@@ -420,7 +420,7 @@ article30.addEventListener("click",e=>{
 const home = document.getElementById("home");
 
 home.addEventListener("click", e=>{
-    location.replace("intro.html");
+    location.replace("game_intro.html");
 });
 
 const btn_home = document.getElementById("btn_home");
