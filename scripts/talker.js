@@ -118,7 +118,7 @@ if (require.main === module) {
     // drawing motion 
 
 
-    exec('cd ' +__dirname + '/public/hongdo_AI/simple_AI && python3 vision.py',async(err, stdout, stderr) => {
+    exec('python3 '+__dirname + '/public/hongdo_AI/simple_AI/vision.py',async(err, stdout, stderr) => {
       if(err) console.error(err)
       console.log(stdout)
     })
@@ -143,8 +143,10 @@ if (require.main === module) {
   })
 
   app.get('/QR_make.html', (req,res) => {
-    imgbbUploader("e4422a3845100fe670775736ffd0e7cb", __dirname +'/public/hongdo_AI/output/trained_model.png'). then((response)=>
-      url_service(JSON.stringify(response.url)[1,-2])
+
+    imgbbUploader("e4422a3845100fe670775736ffd0e7cb", '/home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/hongdo_AI/output/trained_model.png'). then((response)=>
+      url_service(JSON.stringify(response.url))
+      // console.log(JSON.stringify(response.url))
     )
     .catch((error) => 
       console.error(error)
