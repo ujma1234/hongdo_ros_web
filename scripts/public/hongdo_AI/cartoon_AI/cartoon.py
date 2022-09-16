@@ -166,11 +166,14 @@ img = Image.open(_pr_dirpath + '/input/model.png').convert("RGB")
 
 face_detector = get_dlib_face_detector()
 landmarks = face_detector(img)
-# img2 = None
-display_facial_landmarks(img, landmarks, fig_size=[5, 5])
+
+# display_facial_landmarks(img, landmarks, fig_size=[5, 5])
+bool = 0;
 for landmark in landmarks:
     face = align_and_crop_face(img, landmark, expand=1.3)
-    # display(face2paint(model=model, img=face, size=512))
-    img2 = face2paint(model=model, img=face, size=512)
+    bool = 1;
 
-img2.save(os.path.join(_pr_dirpath+"/output",'trained_model.png'))
+if(bool != 0):
+  # display(face2paint(model=model, img=img, size=512))
+  img2 = face2paint(model=model, img=img, size=512) 
+  img2.save(os.path.join(_pr_dirpath+"/output",'trained_model.png'))
