@@ -37,6 +37,10 @@ _yes.addEventListener("click", e=>{
     },1000);
 });
 
+_no.addEventListener("click",e=>{
+    location.replace("intro.html");
+});
+
 const btn_home = document.getElementById("btn_home");
 
 var go_home = 0;
