@@ -199,6 +199,10 @@ if (require.main === module) {
     res.sendFile(__dirname+'/finish.html');
   })
 
+  app.get('/game_touch.html', (req,res) =>{
+    res.sendFile(__dirname+'/game_touch.html');
+  })
+
 
   // Invoke Main Talker Function
 

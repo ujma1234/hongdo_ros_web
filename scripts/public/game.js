@@ -974,6 +974,10 @@ stage2.addEventListener("click", e=>{
     setTimeout(()=>{
         finding_audio.volume=0.5;
     },1600);
+
+    setTimeout(()=>{
+        document.querySelector(".change_bg").className = "off_black_bg";
+    },3000);
 });
 
 const skb2 = document.getElementById("skb2");
@@ -981,7 +985,6 @@ const skb2 = document.getElementById("skb2");
 skb2.addEventListener("click", e=>{
     document.querySelector(".select2").className = "select_view";
     skb2.className = "off_skill_book1";
-    document.querySelector(".change_bg").className = "off_black_bg";
 
     setTimeout(()=>{
         finding_audio.volume=0.2;
@@ -1150,6 +1153,10 @@ stage3.addEventListener("click",e=>{
     setTimeout(()=>{
         finding_audio.volume=0.5;
     },1600);
+
+    setTimeout(()=>{
+        document.querySelector(".change_bg").className = "off_black_bg";
+    },3000);
 });
 
 const skb3 = document.getElementById("skb3");
@@ -1157,7 +1164,6 @@ const skb3 = document.getElementById("skb3");
 skb3.addEventListener("click", e=>{
     document.querySelector(".select3").className = "select_view";
     skb3.className = "off_skill_book1";
-    document.querySelector(".change_bg").className = "off_black_bg";
     setTimeout(()=>{
         finding_audio.volume=0.2;
         voice9_audio.play();
@@ -1324,6 +1330,10 @@ stage4.addEventListener("click",e=>{
     setTimeout(()=>{
         finding_audio.volume=0.5;
     },1600);
+
+    setTimeout(()=>{
+        document.querySelector(".change_bg").className = "off_black_bg";
+    },3000);
 });
 
 const skb4 = document.getElementById("skb4");
@@ -1331,7 +1341,6 @@ const skb4 = document.getElementById("skb4");
 skb4.addEventListener("click",e=>{
     document.querySelector(".select4").className = "select_view";
     skb4.className = "off_skill_book1";
-    document.querySelector(".change_bg").className = "off_black_bg";
 
     setTimeout(()=>{
         finding_audio.volume=0.2;
@@ -1558,7 +1567,7 @@ var go_home = 0;
 btn_home.addEventListener("click",e=>{
     go_home++;
     if(go_home >= 5) {
-        location.replace("intro.html");
+        location.replace("game_touch.html");
     }
 });
 

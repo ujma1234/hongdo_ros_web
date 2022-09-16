@@ -74,7 +74,7 @@ body main .hong2 {
   height: 40vh;
   z-index: 2;
   position: absolute;
-  bottom: -30vh;
+  bottom: -40vh;
   left: -5vw;
   animation: hong2_move 0.7s ease-out;
   animation-delay: 1.3s;
@@ -82,7 +82,7 @@ body main .hong2 {
 }
 @keyframes hong2_move {
   0% {
-    bottom: -30vh;
+    bottom: -40vh;
     left: -10vw;
   }
   100% {
