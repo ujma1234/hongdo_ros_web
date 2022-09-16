@@ -4,9 +4,9 @@
 __pycache__/*
 
 #picutre
-scripts/public/hongdo_AI/input/*
-scripts/public/hongdo_AI/output/*
-scripts/public/hongdo_AI/backup_origin/*
+/scripts/public/hongdo_AI/input/*
+/scripts/public/hongdo_AI/output/*
+/scripts/public/hongdo_AI/backup_origin/*
 
 #vscode
 .vscode/*
