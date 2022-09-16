@@ -7,5 +7,7 @@
     </description>
     <maintainer email="jeonghan@todo.todo">jeonghan</maintainer>
     <license>TODO</license>
+    <depend>rospy</depend>
+    <depend>std_msgs</depend>
     <buildtool_depend>catkin</buildtool_depend>
 </package>

@@ -1,28 +1,17 @@
-from distutils.command.config import LANG_EXT
-from re import I
-import fastai
-from fastai.utils.mem import *
-from matplotlib.pyplot import show
-import numpy as np
-import urllib.request
-import PIL.Image
-from io import BytesIO
-import torchvision.transforms as T
-from PIL import Image, ImageShow
-import requests
-from fastai.vision import *
-from IPython.display import display
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-from torchvision.utils import save_image
-import torchvision.transforms as transforms
+#! /usr/bin/env python3
 
-class fileRoot(object):
+import rospy
+from std_srvs.srv import Trigger, TriggerResponse
+import numpy as np
+import PIL.Image
+import torchvision.transforms as T
+from fastai.vision import *
+from torchvision.utils import save_image
+
+class fileRoot(object): 
     file_abspath = os.path.abspath(__file__)
     dirpath = os.path.dirname(file_abspath)
     pr_dirpath = os.path.dirname(dirpath)
-
-
 
 class FeatureLoss(nn.Module):
     def __init__(self, m_feat, layer_ids, layer_wgts):
@@ -51,21 +40,52 @@ class FeatureLoss(nn.Module):
     
     def __del__(self): self.hooks.remove()
 
-_path = fileRoot.dirpath
-_pr_dirpath = fileRoot.pr_dirpath
+class hongdosimpleAInode:
+    _number = None
+    _path =None
+    _pr_dirpath=None
+    def __init__(self):
+        self._number = 0
+        self._path = fileRoot.dirpath
+        self._pr_dirpath = fileRoot.pr_dirpath
+        print(self._pr_dirpath)
+        rospy.loginfo("AI node is start")
+        rospy.Service('/simple_AI', Trigger, self.start)
 
-learn=load_learner(_path, 'ArtLine_650.pkl')
+        rospy.on_shutdown(self.__del__)
 
-# response = PIL.Image.open('./mdoel.jpg')
-img = PIL.Image.open(_pr_dirpath + '/input/model.png')
-img_t = T.ToTensor()(img)
-img_fast = Image(img_t)
-# print(img_fast)
-p,img_hr,b = learn.predict(img_fast)
 
-# print(img_hr)
-#img_last=img_hr.permute(1,2,0)
+    def start(self, req):
 
-save_image(img_hr, os.path.join(_pr_dirpath+"/output",'trained_model.png'))
+        rospy.loginfo('start AImodel')
+        self._number+=1
+        self.AImodel()
+        return TriggerResponse(success=True, message="finish")
 
-#f=open()
+    def AImodel(self):
+        # pass
+        # learn=load_learner(self._path, 'ArtLine_650.pkl')
+        img = PIL.Image.open(self._pr_dirpath + '/input/model.png')
+        # img_t = T.ToTensor()(img)
+        # img_fast = Image(img_t)
+        # p,img_hr,b = learn.predict(img_fast)
+        # save_image(img_hr, os.path.join(self._pr_dirpath+"/output",'{0}.png'.format(self._number)))
+        # save_image(img_hr, os.path.join(self._pr_dirpath+"/backup_trained", ))
+
+
+        rospy.on_shutdown(self.__del__)
+
+    def main(self):
+        rospy.spin()
+
+    def __del__(self):
+        print("terminating hongdo_ros_simpleAI_node")
+        self._number = None
+        self._path = None
+        self._pr_dirpath=None
+# if __name__ == '__main__':
+rospy.init_node('hongdo_ros_simpleAI_node')
+learn=load_learner(fileRoot.dirpath, 'ArtLine_650.pkl')
+node = hongdosimpleAInode()
+# learn=load_learner(node._path, 'ArtLine_650.pkl')
+node.main()

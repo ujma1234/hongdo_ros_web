@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8da9db134d070b3aebcbb2186caebed4540925774f918dd597c893c88d716ecb
-size 102
+fastai==1.0.61
+numpy==1.17.2
+pandas==1.1.2 
+torch==1.6.0
+torchvision===0.7.0
+
+
