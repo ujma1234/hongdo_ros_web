@@ -57,9 +57,7 @@ function handshake_service() {
 function url_service(urlstring) {
   const client = nh.serviceClient('/make_qr', 'hongdo_ros_webconnect/UrlTunnel');
   client.call({url : urlstring})
-  .then((res) =>{
-    return res;
-  });
+
 }
 
 
@@ -148,9 +146,11 @@ if (require.main === module) {
   app.get('/QR_make.html', (req,res) => {
     res.sendFile(__dirname+'/QR_make.html');
     imgbbUploader("e4422a3845100fe670775736ffd0e7cb", '/home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/hongdo_AI/output/trained_model.png'). then((response)=> {
-      if( url_service(JSON.stringify(response.url)) == true ) {
-        return res.redirect("/drawn.html");
-      }
+      // if( url_service(JSON.stringify(response.url)) == true ) {
+      //   return res.redirect("/drawn.html");
+      // }
+
+      url_service(JSON.stringify(response.url))
     }
       // console.log(JSON.stringify(response.url))
     )
