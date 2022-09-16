@@ -1,6 +1,4 @@
-setTimeout(()=>{
-    location.replace("drawn.html");
-},3000);
+
 
 const btn_home = document.getElementById("btn_home");
 
