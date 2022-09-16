@@ -18,7 +18,11 @@ const yes = document.getElementById("YES");
 const no = document.getElementById("NO");
 
 yes.addEventListener("click", e=>{
-    location.replace("loading.html");
+    yes.className = "yes_btn_click";
+    setTimeout(()=>{
+        location.replace("loading.html");
+    },500);
+    
 });
 
 no.addEventListener("click", e=>{

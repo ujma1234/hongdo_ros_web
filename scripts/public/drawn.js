@@ -17,5 +17,15 @@ btn_home.addEventListener("click",e=>{
 const btn_next = document.getElementById("next_btn");
 
 btn_next.addEventListener("click", e=>{
-    location.replace("intro.html");
+    document.querySelector(".off_end").className = "end";
+});
+
+const go_back = document.querySelector(".txt_end2");
+
+go_back.addEventListener("click", e=>{
+    go_back.className = "txt_end2_b";
+    document.querySelector(".img2").className = "img2_b";
+    setTimeout(()=>{
+        location.replace("intro.html");
+    },300);
 });

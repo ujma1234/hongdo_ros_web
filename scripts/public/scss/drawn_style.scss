@@ -34,6 +34,7 @@ body {
       top: 0vh;
       position: absolute;
       overflow: hidden;
+      z-index: 3;
 
       .duru2 {
           width: 100%;
@@ -50,8 +51,8 @@ body {
           }
 
           .img {
-            width: 88%;
-            left: 6%;
+            width: 86%;
+            left: 7%;
             height: 80%;
             top: 6%;
             position: absolute;
@@ -203,10 +204,119 @@ body {
           filter: drop-shadow(2px 2px 2vh rgba(0,0,0,0.8));
       }
     }
+
+    .off_end {
+      visibility: hidden;
+    }
+
+    .end {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      opacity: 0;
+      z-index: 4;
+      animation: fadein 0.5s linear;
+      animation-fill-mode: forwards;
+
+      .bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background: rgba(0,0,0,0.8);
+        z-index: 5;
+      }
+
+      .img1 {
+        width: 60vw;
+        left: 20vw;
+        height: 43vh;
+        top: 18vh;
+        position: absolute;
+        z-index: 6;
+        object-fit: fill;
+      }
+
+      .txt_end1 {
+        width: 54vw;
+        left: 23vw;
+        height: 23vh;
+        top: 30vh;
+        position: absolute;
+        z-index: 6;
+        font: 6vh "Nanum Brush Script";
+        .txt_end1_1, .txt_end1_2, .txt_end1_3 {
+          width: 100%;
+          height: 33%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .img2 {
+        width: 56.9vw;
+        left: 21.59vw;
+        height: 16vh;
+        top: 61vh;
+        position: absolute;
+        z-index: 6;
+        object-fit: fill;
+        
+      }
+
+      .img2_b {
+        width: 56.9vw;
+        left: 21.59vw;
+        height: 16vh;
+        top: 61vh;
+        position: absolute;
+        z-index: 6;
+        object-fit: fill;
+        animation: bigger 0.3s linear;
+      }
+
+      .txt_end2_b {
+        width: 52.9vw;
+        left: 23.59vw;
+        height: 16vh;
+        top: 61vh;
+        position: absolute;
+        z-index: 6;
+        font: 6vh "Nanum Brush Script";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: bigger 0.3s linear;
+      }
+
+      .txt_end2 {
+        width: 52.9vw;
+        left: 23.59vw;
+        height: 16vh;
+        top: 61vh;
+        position: absolute;
+        z-index: 6;
+        font: 6vh "Nanum Brush Script";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
   }
 }
 
 @keyframes fadein {
   0%{opacity: 0;}
   100%{opacity: 1;}
+}
+
+@keyframes bigger {
+  0%{transform: scale(1);}
+  50%{transform: scale(1.1);}
+  100%{transform: scale(1);}
 }

@@ -321,4 +321,16 @@ body main .select_btn_box .yes_btn_click .yes {
   font: 4vh "Nanum Brush Script";
 }
 
+@keyframes click_motion {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /*# sourceMappingURL=select_pic_style.css.map */
