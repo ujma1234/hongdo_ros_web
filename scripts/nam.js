@@ -30,6 +30,8 @@ const path = require('path');
 const imgbbUploader = require("imgbb-uploader")
 const fs = require('fs');
 const url = require('url');
+const { request } = require('http');
+const { resolve } = require('path');
 const port = 5000;
 // Requrotires the std_msgs message package
 // const std_msgs = rosnodejs.require('std_msgs').msg;
@@ -91,7 +93,13 @@ const port = 5000;
 // }
 
 
-
+// function url() {
+//   return new Promise(reslove=>{
+//     request(url, function(err,res, body) {
+//       resolve(true);
+//     })
+//   })
+// }
 
 
 
@@ -142,7 +150,7 @@ if (require.main === module) {
     res.sendFile(__dirname+'/select_pic.html');
     
   })
-
+  var client = null;
 
   app.get('/loading.html', (req,res) =>{
     // handshake_service();
@@ -157,9 +165,11 @@ if (require.main === module) {
     // })
 
     res.sendFile(__dirname+'/loading.html');
-
+    client = res;
   })
-
+  function sendRefresh() {
+    client.write('data: refresh');
+  }
   app.get('/QR_make.html', (req,res) => {
     // imgbbUploader("e4422a3845100fe670775736ffd0e7cb", '/home/jeonghan/catkin_ws/src/hongdo_ros/hongdo_ros_web/scripts/public/img/uploads/hi.png'). then((response)=>
     //   url_service(JSON.stringify(response.url))
@@ -167,8 +177,11 @@ if (require.main === module) {
     // .catch((error) => 
     //   console.error(error)
     // );
+    client = res;
     res.sendFile(__dirname+'/QR_make.html');
   })
+
+
 
 
   app.get('/drawn.html', (req,res) =>{
@@ -180,7 +193,6 @@ if (require.main === module) {
     // .catch((error) => 
     //   console.error(error)
     // );
-
     res.sendFile(__dirname+'/drawn.html');
   })
 
