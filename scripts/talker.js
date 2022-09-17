@@ -119,7 +119,7 @@ if (require.main === module) {
     // drawing motion 
 
 
-    exec('python3 '+__dirname + '/public/hongdo_AI/simple_AI/vision.py && cd' +__dirname + '/hongdo_AI/cartoonl_AI && python3 cartoon.py',async(err, stdout, stderr) => {
+    exec('python3 '+__dirname + '/public/hongdo_AI/simple_AI/vision.py && cd ' +__dirname + '/public/hongdo_AI/cartoon_AI && python3 cartoon.py',async(err, stdout, stderr) => {
       if(err) console.error(err)
       console.log(stdout)
     })
