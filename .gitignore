@@ -10,3 +10,6 @@ scripts/public/hongdo_AI/backup_origin/
 
 #vscode
 .vscode/
+
+#node_modules
+node_modules/
